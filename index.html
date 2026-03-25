@@ -8,7 +8,11 @@
 <link rel="alternate" hreflang="de" href="https://bansemir.net/de/">
 <link rel="alternate" hreflang="en" href="https://bansemir.net/en/">
 <link rel="alternate" hreflang="x-default" href="https://bansemir.net/de/">
-<meta http-equiv="refresh" content="0; url=/de/">
+<script>
+var l=localStorage.getItem("bansemir.lang");
+window.location.href=l==="en"?"/en/":"/de/";
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=/de/"></noscript>
 </head>
 <body>
 <p><a href="/de/">Weiter zur deutschen Seite</a> | <a href="/en/">Continue in English</a></p>
