@@ -39,8 +39,8 @@ sap.ui.define([
         onLanguageToggle: function () {
             var sLocale = this.getLocale();
             var sTarget = sLocale === "de" ? "en" : "de";
-            Localization.setLanguage(sTarget);
-            location.reload();
+            var sUrl = window.location.pathname + "?sap-language=" + sTarget;
+            window.location.href = sUrl;
         },
 
         onOpenGitHub: function () {

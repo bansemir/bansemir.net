@@ -1,0 +1,10 @@
+.sapFShellBar {
+    background-color: #354a5f;
+}
+.sapFShellBar .sapFShellBarOverflowToolbar {
+    background-color: #354a5f;
+}
+.sapFShellBar .sapMBtn .sapMBtnIcon,
+.sapFShellBar .sapMBtn .sapMBtnContent {
+    color: #fff;
+}
