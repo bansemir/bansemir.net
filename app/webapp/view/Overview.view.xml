@@ -138,6 +138,11 @@
                                                     <Link text="{i18n>contact.linkedin}" href="{config>/social/linkedin}" target="_blank" />
                                                 </form:fields>
                                             </form:FormElement>
+                                            <form:FormElement label="GULP">
+                                                <form:fields>
+                                                    <Link text="{i18n>contact.gulp}" href="{config>/social/gulp}" target="_blank" />
+                                                </form:fields>
+                                            </form:FormElement>
                                         </form:formElements>
                                     </form:FormContainer>
                                 </form:formContainers>

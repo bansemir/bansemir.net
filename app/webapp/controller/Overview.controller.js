@@ -34,6 +34,11 @@ sap.ui.define([
                 oSkillsModel.attachEventOnce("requestCompleted", function () {
                     this._buildFlatSkills(oSkillsModel);
                 }.bind(this));
+                setTimeout(function () {
+                    if (!this.getView().getModel("skillsFlat")) {
+                        this._buildFlatSkills(oSkillsModel);
+                    }
+                }.bind(this), 3000);
             }
         },
 

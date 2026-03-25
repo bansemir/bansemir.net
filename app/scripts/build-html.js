@@ -16,6 +16,7 @@ var baseReplacements = {
     "{{CALENDLY_URL}}": config.services.calendlyUrl,
     "{{GITHUB_URL}}": config.social.github,
     "{{LINKEDIN_URL}}": config.social.linkedin,
+    "{{GULP_URL}}": config.social.gulp,
     "{{DOMAIN}}": config.site.domain
 };
 

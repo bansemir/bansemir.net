@@ -18,8 +18,8 @@
       "id": "sap-modern",
       "label": { "de": "SAP Modern", "en": "SAP Modern" },
       "skills": [
-        { "name": "SAP BTP", "years": 2, "level": "advanced", "projects": [] },
-        { "name": "S/4HANA", "years": 3, "level": "advanced", "projects": [] },
+        { "name": "SAP BTP", "years": 2, "level": "advanced", "projects": ["sabbatical"] },
+        { "name": "S/4HANA", "years": 3, "level": "advanced", "projects": ["sabbatical"] },
         { "name": "Clean Core", "years": 1, "level": "advanced", "projects": ["sabbatical"] },
         { "name": "SAP Joule", "years": 1, "level": "intermediate", "projects": ["sabbatical"] },
         { "name": "SAP MII / MES", "years": 5, "level": "expert", "projects": ["aryzta-mii", "aryzta-middleware"] }
@@ -44,7 +44,7 @@
         { "name": "WebSphere", "years": 7, "level": "expert", "projects": ["huk-coburg"] },
         { "name": "Web Services / REST", "years": 10, "level": "expert", "projects": ["huk-coburg", "zeppelin"] },
         { "name": "IIoT", "years": 3, "level": "advanced", "projects": ["aryzta-mii"] },
-        { "name": "DevOps", "years": 3, "level": "intermediate", "projects": [] },
+        { "name": "DevOps", "years": 3, "level": "intermediate", "projects": ["sabbatical"] },
         { "name": "JavaScript / TypeScript", "years": 5, "level": "advanced", "projects": ["schwarz-yard-mgmt", "zeppelin"] }
       ]
     }
