@@ -2,6 +2,41 @@
     controllerName="net.bansemir.profile.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
     displayBlock="true">
-    <App id="app" />
+    <Page showHeader="false" enableScrolling="false">
+        <f:ShellBar
+            title="{config>/owner/name}"
+            secondTitle="{i18n>hero.role}"
+            showNavButton="false">
+            <f:additionalContent>
+                <Select id="languageSelect" change=".onLanguageChange" accessibleName="{i18n>language.select.label}">
+                    <core:Item key="de" text="DE" />
+                    <core:Item key="en" text="EN" />
+                </Select>
+                <OverflowToolbarButton
+                    icon="sap-icon://source-code"
+                    type="Transparent"
+                    tooltip="GitHub"
+                    press=".onOpenGitHub" />
+            </f:additionalContent>
+        </f:ShellBar>
+        <App id="app" />
+        <footer>
+            <OverflowToolbar>
+                <Link text="{i18n>footer.imprint}" href="../../legal/impressum.html" />
+                <ToolbarSeparator />
+                <Link text="{i18n>footer.privacy}" href="../../legal/datenschutz.html" />
+                <ToolbarSeparator />
+                <Link text="GitHub" href="https://github.com/bansemir/bansemir.net" target="_blank" />
+                <ToolbarSeparator />
+                <Link text="LinkedIn" href="https://linkedin.com/in/carsten-bansemir" target="_blank" />
+                <ToolbarSpacer />
+                <Text text="{i18n>footer.copyright}" />
+                <ToolbarSeparator />
+                <Text text="{i18n>footer.builtWith}" />
+            </OverflowToolbar>
+        </footer>
+    </Page>
 </mvc:View>

@@ -1,10 +1,66 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function (Controller) {
+    "net/bansemir/profile/controller/BaseController",
+    "net/bansemir/profile/model/formatter",
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+], function (BaseController, formatter, JSONModel, Filter, FilterOperator) {
     "use strict";
 
-    return Controller.extend("net.bansemir.profile.controller.Overview", {
+    return BaseController.extend("net.bansemir.profile.controller.Overview", {
+
+        formatter: formatter,
+
         onInit: function () {
+            this._flattenSkills();
+        },
+
+        onOpenCalendly: function () {
+            window.open("https://calendly.com/carsten-bansemir", "_blank");
+        },
+
+        _flattenSkills: function () {
+            var oSkillsModel = this.getModel("skills");
+            oSkillsModel.attachEventOnce("requestCompleted", function () {
+                var aCategories = oSkillsModel.getProperty("/categories") || [];
+                var sLocale = this.getLocale();
+                var aFlat = [];
+                aCategories.forEach(function (oCategory) {
+                    var sCategoryLabel = oCategory.label
+                        ? (oCategory.label[sLocale] || oCategory.label.de)
+                        : oCategory.id;
+                    (oCategory.skills || []).forEach(function (oSkill) {
+                        aFlat.push({
+                            name: oSkill.name,
+                            category: sCategoryLabel,
+                            categoryId: oCategory.id,
+                            years: oSkill.years,
+                            level: oSkill.level,
+                            projects: oSkill.projects
+                        });
+                    });
+                });
+                this.setModel(new JSONModel(aFlat), "skillsFlat");
+            }.bind(this));
+        },
+
+        onSkillSearch: function (oEvent) {
+            var sQuery = oEvent.getParameter("query") ||
+                oEvent.getParameter("newValue") || "";
+            var oTable = this.byId("skillsTable");
+            var oBinding = oTable.getBinding("rows");
+            if (oBinding) {
+                var aFilters = sQuery
+                    ? [new Filter("name", FilterOperator.Contains, sQuery)]
+                    : [];
+                oBinding.filter(aFilters);
+            }
+        },
+
+        onNavToProject: function (oEvent) {
+            var oContext = oEvent.getSource().getBindingContext("projects");
+            var sProjectId = oContext.getProperty("id");
+            this.navTo("projectDetail", { projectId: sProjectId });
         }
     });
 });

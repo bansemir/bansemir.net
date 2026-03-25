@@ -1,0 +1,52 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:table="sap.ui.table"
+    xmlns:rowmodes="sap.ui.table.rowmodes">
+
+    <table:Table
+        id="skillsTable"
+        rows="{skillsFlat>/}"
+        selectionMode="None">
+        <table:rowMode>
+            <rowmodes:Auto minRowCount="5" maxRowCount="15" />
+        </table:rowMode>
+        <table:extension>
+            <OverflowToolbar>
+                <Title text="{i18n>skills.heading}" />
+                <ToolbarSpacer />
+                <SearchField width="15rem" search=".onSkillSearch" />
+            </OverflowToolbar>
+        </table:extension>
+        <table:columns>
+            <table:Column minWidth="150" sortProperty="name" filterProperty="name">
+                <Label text="{i18n>skills.skill}" />
+                <table:template>
+                    <Text text="{skillsFlat>name}" />
+                </table:template>
+            </table:Column>
+            <table:Column minWidth="120" sortProperty="category" filterProperty="category">
+                <Label text="{i18n>skills.category}" />
+                <table:template>
+                    <Text text="{skillsFlat>category}" />
+                </table:template>
+            </table:Column>
+            <table:Column minWidth="100" sortProperty="years">
+                <Label text="{i18n>skills.experience}" />
+                <table:template>
+                    <ObjectNumber
+                        number="{skillsFlat>years}"
+                        unit="{i18n>skills.years}" />
+                </table:template>
+            </table:Column>
+            <table:Column minWidth="100" sortProperty="level">
+                <Label text="{i18n>skills.level}" />
+                <table:template>
+                    <ObjectStatus
+                        text="{= ${skillsFlat>level} === 'expert' ? ${i18n>skills.level.expert} : (${skillsFlat>level} === 'advanced' ? ${i18n>skills.level.advanced} : ${i18n>skills.level.intermediate})}"
+                        state="{path: 'skillsFlat>level', formatter: '.formatter.formatLevelState'}" />
+                </table:template>
+            </table:Column>
+        </table:columns>
+    </table:Table>
+</core:FragmentDefinition>

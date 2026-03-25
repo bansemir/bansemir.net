@@ -22,12 +22,15 @@
         "dependencies": {
             "minUI5Version": "1.136.0",
             "libs": {
+                "sap.f": {},
                 "sap.m": {},
                 "sap.ui.core": {},
                 "sap.uxap": {},
-                "sap.ui.layout": {}
+                "sap.ui.layout": {},
+                "sap.ui.table": {}
             }
         },
+        "flexEnabled": false,
         "contentDensities": {
             "compact": true,
             "cozy": true
@@ -55,6 +58,10 @@
             "toolkit": {
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "model/toolkit.json"
+            },
+            "config": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/config.json"
             }
         },
         "routing": {
@@ -81,11 +88,13 @@
             "targets": {
                 "overview": {
                     "viewName": "Overview",
-                    "viewLevel": 1
+                    "viewLevel": 1,
+                    "name": "overview"
                 },
                 "projectDetail": {
                     "viewName": "ProjectDetail",
-                    "viewLevel": 2
+                    "viewLevel": 2,
+                    "name": "projectDetail"
                 }
             }
         }
