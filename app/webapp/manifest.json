@@ -44,7 +44,9 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "net.bansemir.profile.i18n.i18n"
+                    "bundleName": "net.bansemir.profile.i18n.i18n",
+                    "supportedLocales": ["de", "en"],
+                    "fallbackLocale": "de"
                 }
             },
             "projects": {
@@ -87,14 +89,12 @@
             ],
             "targets": {
                 "overview": {
-                    "viewName": "Overview",
-                    "viewLevel": 1,
-                    "name": "overview"
+                    "name": "Overview",
+                    "level": 1
                 },
                 "projectDetail": {
-                    "viewName": "ProjectDetail",
-                    "viewLevel": 2,
-                    "name": "projectDetail"
+                    "name": "ProjectDetail",
+                    "level": 2
                 }
             }
         }
