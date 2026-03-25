@@ -1,8 +1,7 @@
 sap.ui.define([
     "net/bansemir/profile/controller/BaseController",
-    "sap/base/i18n/Localization",
     "sap/ui/core/Theming"
-], function (BaseController, Localization, Theming) {
+], function (BaseController, Theming) {
     "use strict";
 
     var LIGHT_THEME = "sap_fiori_3";
