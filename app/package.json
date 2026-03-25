@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "start": "ui5 serve -o index.html",
-        "build": "ui5 build --all --dest ../dist/app",
+        "build": "ui5 build --all --dest ../dist/app && node scripts/generate-cachebuster-info.js",
         "lint": "ui5lint"
     },
     "devDependencies": {
