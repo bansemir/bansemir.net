@@ -11,10 +11,12 @@
             secondTitle="{i18n>hero.role}"
             showNavButton="false">
             <f:additionalContent>
-                <Select id="languageSelect" selectedKey="{appView>/locale}" change=".onLanguageChange" tooltip="{i18n>language.select.label}">
-                    <core:Item key="de" text="DE" />
-                    <core:Item key="en" text="EN" />
-                </Select>
+                <OverflowToolbarButton
+                    icon="sap-icon://globe"
+                    text="{i18n>nav.langSwitch}"
+                    type="Transparent"
+                    press=".onLanguageToggle"
+                    tooltip="{i18n>language.select.label}" />
                 <OverflowToolbarButton
                     icon="sap-icon://source-code"
                     type="Transparent"
