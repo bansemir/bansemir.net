@@ -12,8 +12,10 @@ sap.ui.define([
 
         onInit: function () {
             var sSaved = localStorage.getItem("bansemir.theme");
-            if (sSaved && sSaved !== Theming.getTheme()) {
+            if (sSaved && (sSaved === LIGHT_THEME || sSaved === DARK_THEME) && sSaved !== Theming.getTheme()) {
                 Theming.setTheme(sSaved);
+            } else if (sSaved && sSaved !== LIGHT_THEME && sSaved !== DARK_THEME) {
+                localStorage.removeItem("bansemir.theme");
             }
             this._updateThemeIcon();
         },
