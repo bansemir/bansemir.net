@@ -181,8 +181,6 @@ footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;font-
   </div>
 </footer>
 
-<script>
-(function(){var b=document.getElementById("themeToggle"),r=document.documentElement;var t=localStorage.getItem("bansemir.theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");r.setAttribute("data-theme",t);b.textContent=t==="dark"?"\u2600":"\u263E";b.addEventListener("click",function(){t=t==="dark"?"light":"dark";r.setAttribute("data-theme",t);localStorage.setItem("bansemir.theme",t);b.textContent=t==="dark"?"\u2600":"\u263E"});localStorage.setItem("bansemir.lang","de");var l=document.querySelector('.lang-switch a');if(l){l.addEventListener("click",function(){localStorage.setItem("bansemir.lang",l.hreflang)}}})();
-</script>
+<script src="../assets/landing.js"></script>
 </body>
 </html>
