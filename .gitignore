@@ -5,3 +5,6 @@ dist/
 *.log
 .ui5/
 content/
+.claude/launch.json
+.playwright-mcp/
+app/webapp/model/config.json
