@@ -2,38 +2,151 @@
     controllerName="net.bansemir.profile.controller.Overview"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
     xmlns:uxap="sap.uxap">
-    <uxap:ObjectPageLayout id="overviewPage"
-        headerTitle="{i18n>appTitle}"
-        showTitleInHeaderContent="true">
+
+    <uxap:ObjectPageLayout id="overviewPage">
         <uxap:headerTitle>
             <uxap:ObjectPageDynamicHeaderTitle>
                 <uxap:heading>
-                    <Title text="{i18n>hero.headline}" />
+                    <Title text="{config>/owner/name}" />
                 </uxap:heading>
                 <uxap:snappedHeading>
-                    <Title text="{i18n>hero.headline}" />
+                    <Title text="{config>/owner/name}" />
                 </uxap:snappedHeading>
                 <uxap:expandedContent>
-                    <Text text="{i18n>hero.subline}" />
+                    <Text text="{i18n>hero.headline}" />
                 </uxap:expandedContent>
                 <uxap:snappedContent>
-                    <Text text="{i18n>hero.subline}" />
+                    <Text text="{i18n>hero.headline}" />
                 </uxap:snappedContent>
+                <uxap:actions>
+                    <Button text="{i18n>hero.cta}" type="Emphasized" press=".onOpenCalendly" />
+                </uxap:actions>
             </uxap:ObjectPageDynamicHeaderTitle>
         </uxap:headerTitle>
+
+        <uxap:headerContent>
+            <FlexBox alignItems="Start" wrap="Wrap">
+                <Avatar src="../../assets/portrait.jpg" displaySize="XL" displayShape="Circle" tooltip="{config>/owner/name}" />
+                <VBox class="sapUiSmallMarginBegin">
+                    <ObjectAttribute title="{i18n>hero.role}" text="{i18n>hero.headline}" />
+                    <ObjectStatus text="{i18n>contact.status}" state="Success" />
+                    <ObjectAttribute text="{i18n>hero.subline}" />
+                </VBox>
+            </FlexBox>
+        </uxap:headerContent>
+
         <uxap:sections>
-            <uxap:ObjectPageSection title="{i18n>skills.heading}" id="skillsSection">
+            <uxap:ObjectPageSection title="{i18n>positioning.heading}" id="positioningSection">
                 <uxap:subSections>
-                    <uxap:ObjectPageSubSection>
-                        <Text text="{i18n>skills.heading}" />
+                    <uxap:ObjectPageSubSection title="{i18n>positioning.sapDepth.title}">
+                        <FormattedText htmlText="{i18n>positioning.sapDepth.text}" />
+                    </uxap:ObjectPageSubSection>
+                    <uxap:ObjectPageSubSection title="{i18n>positioning.archBreadth.title}">
+                        <FormattedText htmlText="{i18n>positioning.archBreadth.text}" />
+                    </uxap:ObjectPageSubSection>
+                    <uxap:ObjectPageSubSection title="{i18n>positioning.aiPractice.title}">
+                        <FormattedText htmlText="{i18n>positioning.aiPractice.text}" />
                     </uxap:ObjectPageSubSection>
                 </uxap:subSections>
             </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>skills.heading}" id="skillsSection">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <core:Fragment fragmentName="net.bansemir.profile.view.fragment.SkillsTable" type="XML" />
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
             <uxap:ObjectPageSection title="{i18n>projects.heading}" id="projectsSection">
                 <uxap:subSections>
                     <uxap:ObjectPageSubSection>
-                        <Text text="{i18n>projects.heading}" />
+                        <core:Fragment fragmentName="net.bansemir.profile.view.fragment.ProjectCard" type="XML" />
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>toolkit.heading}" id="toolkitSection">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="{i18n>toolkit.subline}">
+                        <core:Fragment fragmentName="net.bansemir.profile.view.fragment.ToolkitTab" type="XML" />
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>builtWith.heading}" id="builtWithSection">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <VBox>
+                            <FormattedText htmlText="{i18n>builtWith.intro}" class="sapUiSmallMarginBottom" />
+
+                            <Panel headerText="{i18n>builtWith.example1Title}" expandable="true" expanded="false">
+                                <Text text="{i18n>builtWith.example1Text}" />
+                            </Panel>
+                            <Panel headerText="{i18n>builtWith.example2Title}" expandable="true" expanded="false">
+                                <Text text="{i18n>builtWith.example2Text}" />
+                            </Panel>
+                            <Panel headerText="{i18n>builtWith.example3Title}" expandable="true" expanded="false">
+                                <Text text="{i18n>builtWith.example3Text}" />
+                            </Panel>
+                            <Panel headerText="{i18n>builtWith.example4Title}" expandable="true" expanded="false">
+                                <Text text="{i18n>builtWith.example4Text}" />
+                            </Panel>
+
+                            <Link text="{i18n>builtWith.viewOnGithub}" href="https://github.com/bansemir/bansemir.net" target="_blank" class="sapUiSmallMarginTop" />
+                        </VBox>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>contact.heading}" id="contactSection">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <VBox>
+                            <form:Form editable="false">
+                                <form:layout>
+                                    <form:ColumnLayout />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer>
+                                        <form:formElements>
+                                            <form:FormElement label="{i18n>contact.statusLabel}">
+                                                <form:fields>
+                                                    <ObjectStatus text="{i18n>contact.status}" state="Success" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="{i18n>projects.location}">
+                                                <form:fields>
+                                                    <Text text="{i18n>contact.model}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="{i18n>contact.rateLabel}">
+                                                <form:fields>
+                                                    <Text text="{i18n>contact.rate}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="{i18n>contact.emailLabel}">
+                                                <form:fields>
+                                                    <Link text="{config>/owner/email}" href="{= 'mailto:' + ${config>/owner/email}}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="{i18n>contact.linkedinLabel}">
+                                                <form:fields>
+                                                    <Link text="{i18n>contact.linkedin}" href="https://linkedin.com/in/carsten-bansemir" target="_blank" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
+                            </form:Form>
+
+                            <VBox alignItems="Center" class="sapUiMediumMarginTop">
+                                <Button text="{i18n>contact.bookCall}" type="Emphasized" press=".onOpenCalendly" />
+                            </VBox>
+                        </VBox>
                     </uxap:ObjectPageSubSection>
                 </uxap:subSections>
             </uxap:ObjectPageSection>

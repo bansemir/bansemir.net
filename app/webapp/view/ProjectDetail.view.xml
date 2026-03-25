@@ -1,13 +1,48 @@
 <mvc:View
     controllerName="net.bansemir.profile.controller.ProjectDetail"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="projectDetailPage"
-        title="{i18n>projects.heading}"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    core:require="{ formatter: 'net/bansemir/profile/model/formatter' }">
+
+    <Page
+        id="projectDetailPage"
+        title="{path: 'projects>role', formatter: 'formatter.formatLocalized'}"
         showNavButton="true"
         navButtonPress=".onNavBack">
-        <content>
-            <Text text="{i18n>projects.showDetails}" />
-        </content>
+
+        <ObjectHeader
+            id="projectHeader"
+            responsive="true"
+            fullScreenOptimized="true"
+            title="{path: 'projects>role', formatter: 'formatter.formatLocalized'}"
+            number="{projects>period}">
+            <attributes>
+                <ObjectAttribute
+                    title="{i18n>projects.client}"
+                    text="{path: 'projects>client', formatter: 'formatter.formatLocalized'}" />
+                <ObjectAttribute
+                    title="{i18n>projects.location}"
+                    text="{path: 'projects>location', formatter: 'formatter.formatLocalized'}" />
+                <ObjectAttribute text="{projects>company}" />
+            </attributes>
+        </ObjectHeader>
+
+        <VBox class="sapUiMediumMargin">
+            <FormattedText
+                htmlText="{path: 'projects>description', formatter: 'formatter.formatLocalized'}" />
+
+            <Title
+                text="{i18n>projects.technologies}"
+                class="sapUiSmallMarginTop" />
+            <HBox wrap="Wrap" id="productsBox"
+                items="{projects>products}">
+                <ObjectStatus
+                    text="{projects>}"
+                    inverted="true"
+                    state="Information"
+                    class="sapUiTinyMarginEnd sapUiTinyMarginBottom" />
+            </HBox>
+        </VBox>
     </Page>
 </mvc:View>
