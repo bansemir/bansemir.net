@@ -1,0 +1,42 @@
+<mvc:View
+    controllerName="net.bansemir.profile.controller.Overview"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap">
+    <uxap:ObjectPageLayout id="overviewPage"
+        headerTitle="{i18n>appTitle}"
+        showTitleInHeaderContent="true">
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:heading>
+                    <Title text="{i18n>hero.headline}" />
+                </uxap:heading>
+                <uxap:snappedHeading>
+                    <Title text="{i18n>hero.headline}" />
+                </uxap:snappedHeading>
+                <uxap:expandedContent>
+                    <Text text="{i18n>hero.subline}" />
+                </uxap:expandedContent>
+                <uxap:snappedContent>
+                    <Text text="{i18n>hero.subline}" />
+                </uxap:snappedContent>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+        <uxap:sections>
+            <uxap:ObjectPageSection title="{i18n>skills.heading}" id="skillsSection">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <Text text="{i18n>skills.heading}" />
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="{i18n>projects.heading}" id="projectsSection">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <Text text="{i18n>projects.heading}" />
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>

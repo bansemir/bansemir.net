@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "id": "sap-core",
+      "label": { "de": "SAP Core", "en": "SAP Core" },
+      "skills": [
+        { "name": "SAP Fiori", "years": 5, "level": "expert", "projects": ["schwarz-yard-mgmt", "schwarz-yard-logistics", "ewm", "zeppelin"] },
+        { "name": "SAPUI5", "years": 5, "level": "expert", "projects": ["schwarz-yard-mgmt", "schwarz-yard-logistics", "zeppelin", "aryzta-mii"] },
+        { "name": "ABAP / ABAP OO", "years": 10, "level": "expert", "projects": ["schwarz-yard-mgmt", "schwarz-yard-logistics", "ewm", "aryzta-middleware", "huk-coburg"] },
+        { "name": "CDS Views", "years": 4, "level": "advanced", "projects": ["schwarz-yard-mgmt", "schwarz-yard-logistics"] },
+        { "name": "BOPF", "years": 4, "level": "advanced", "projects": ["schwarz-yard-mgmt", "schwarz-yard-logistics", "ewm"] },
+        { "name": "RAP", "years": 2, "level": "advanced", "projects": ["sabbatical"] },
+        { "name": "OData", "years": 5, "level": "expert", "projects": ["schwarz-yard-mgmt", "schwarz-yard-logistics", "zeppelin"] },
+        { "name": "SAP NetWeaver", "years": 3, "level": "advanced", "projects": ["aryzta-middleware"] }
+      ]
+    },
+    {
+      "id": "sap-modern",
+      "label": { "de": "SAP Modern", "en": "SAP Modern" },
+      "skills": [
+        { "name": "SAP BTP", "years": 2, "level": "advanced", "projects": [] },
+        { "name": "S/4HANA", "years": 3, "level": "advanced", "projects": [] },
+        { "name": "Clean Core", "years": 1, "level": "advanced", "projects": ["sabbatical"] },
+        { "name": "SAP Joule", "years": 1, "level": "intermediate", "projects": ["sabbatical"] },
+        { "name": "SAP MII / MES", "years": 5, "level": "expert", "projects": ["aryzta-mii", "aryzta-middleware"] }
+      ]
+    },
+    {
+      "id": "ai-automation",
+      "label": { "de": "AI & Automation", "en": "AI & Automation" },
+      "skills": [
+        { "name": "AI-assisted Development", "years": 2, "level": "expert", "projects": ["sabbatical"] },
+        { "name": "Claude Code", "years": 2, "level": "expert", "projects": ["sabbatical"] },
+        { "name": "Prompt Engineering", "years": 2, "level": "expert", "projects": ["sabbatical"] },
+        { "name": "Python", "years": 3, "level": "advanced", "projects": ["sabbatical"] },
+        { "name": "FastAPI", "years": 1, "level": "intermediate", "projects": ["sabbatical"] }
+      ]
+    },
+    {
+      "id": "architecture",
+      "label": { "de": "Architektur", "en": "Architecture" },
+      "skills": [
+        { "name": "Java / Java EE", "years": 12, "level": "expert", "projects": ["huk-coburg", "aryzta-middleware"] },
+        { "name": "WebSphere", "years": 7, "level": "expert", "projects": ["huk-coburg"] },
+        { "name": "Web Services / REST", "years": 10, "level": "expert", "projects": ["huk-coburg", "zeppelin"] },
+        { "name": "IIoT", "years": 3, "level": "advanced", "projects": ["aryzta-mii"] },
+        { "name": "DevOps", "years": 3, "level": "intermediate", "projects": [] },
+        { "name": "JavaScript / TypeScript", "years": 5, "level": "advanced", "projects": ["schwarz-yard-mgmt", "zeppelin"] }
+      ]
+    }
+  ]
+}

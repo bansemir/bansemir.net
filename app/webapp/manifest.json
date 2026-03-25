@@ -1,0 +1,93 @@
+{
+    "_version": "2.0.0",
+    "sap.app": {
+        "id": "net.bansemir.profile",
+        "type": "application",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "i18n": "i18n/i18n.properties"
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "dependencies": {
+            "minUI5Version": "1.136.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.uxap": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "rootView": {
+            "viewName": "net.bansemir.profile.view.App",
+            "type": "XML",
+            "id": "app"
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "net.bansemir.profile.i18n.i18n"
+                }
+            },
+            "projects": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/projects.json"
+            },
+            "skills": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/skills.json"
+            },
+            "toolkit": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/toolkit.json"
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "type": "View",
+                "viewType": "XML",
+                "path": "net.bansemir.profile.view",
+                "controlId": "app",
+                "controlAggregation": "pages"
+            },
+            "routes": [
+                {
+                    "name": "overview",
+                    "pattern": "",
+                    "target": "overview"
+                },
+                {
+                    "name": "projectDetail",
+                    "pattern": "project/{projectId}",
+                    "target": "projectDetail"
+                }
+            ],
+            "targets": {
+                "overview": {
+                    "viewName": "Overview",
+                    "viewLevel": 1
+                },
+                "projectDetail": {
+                    "viewName": "ProjectDetail",
+                    "viewLevel": 2
+                }
+            }
+        }
+    }
+}

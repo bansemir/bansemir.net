@@ -1,0 +1,191 @@
+{
+  "projects": [
+    {
+      "id": "sabbatical",
+      "sortOrder": 1,
+      "period": "Dez 2024 – Feb 2026",
+      "role": {
+        "de": "AI-assisted SAP Development – Neuausrichtung",
+        "en": "AI-assisted SAP Development – Career Pivot"
+      },
+      "company": "Selbstständig",
+      "client": {
+        "de": "Eigenprojekt",
+        "en": "Self-directed"
+      },
+      "clientPublic": false,
+      "location": "Coburg (Remote)",
+      "products": ["Python", "FastAPI", "Claude Code", "OpenAI Codex", "SAP Joule"],
+      "skills": ["AI-assisted Development", "Prompt Engineering", "Python", "SAP Joule", "Clean Core"],
+      "highlight": true,
+      "description": {
+        "de": "Intensive Weiterbildung in AI-assisted Development: Claude Code, OpenAI Codex, SAP Joule for Developers. Entwicklung eines eigenen regelbasierten SAP Accelerator-Toolkits (Python/FastAPI) mit vier spezialisierten Anwendungen für Field-Change-Analyse, Code Review, RAP/Fiori-Generierung und Ticket-Analyse. 85.000+ Zeilen Code, 200+ SAP-Prüfregeln, 4.500+ automatisierte Tests, 10 SAP-Domänen.",
+        "en": "Intensive training in AI-assisted development: Claude Code, OpenAI Codex, SAP Joule for Developers. Built a proprietary rule-based SAP Accelerator Toolkit (Python/FastAPI) with four specialized applications for field-change analysis, code review, RAP/Fiori generation, and ticket evaluation. 85,000+ lines of code, 200+ SAP validation rules, 4,500+ automated tests, 10 SAP domains."
+      }
+    },
+    {
+      "id": "schwarz-yard-mgmt",
+      "sortOrder": 2,
+      "period": "Jan 2023 – Nov 2024",
+      "role": {
+        "de": "SAP Fiori/ABAP Developer",
+        "en": "SAP Fiori/ABAP Developer"
+      },
+      "company": "INTECIO GmbH",
+      "client": {
+        "de": "Schwarz IT / Lidl",
+        "en": "Schwarz IT / Lidl"
+      },
+      "clientPublic": true,
+      "location": "Remote",
+      "products": ["SAP Fiori", "SAPUI5", "ABAP", "SAP WM", "CDS Views", "BOPF", "OData"],
+      "skills": ["SAP Fiori", "ABAP", "CDS Views", "BOPF", "OData", "SAP WM"],
+      "highlight": true,
+      "description": {
+        "de": "Implementierung und Wartung einer SAP Fiori-Anwendung für das Hofmanagement (SAP WM). Entwicklung von CDS Views, BOPF Business Objects und Custom ABAP-Logik. Custom SAP Fiori/UI5 Apps.",
+        "en": "Implementation and maintenance of a SAP Fiori application for yard management (SAP WM). Development of CDS Views, BOPF Business Objects, and custom ABAP logic. Custom SAP Fiori/UI5 apps."
+      }
+    },
+    {
+      "id": "schwarz-yard-logistics",
+      "sortOrder": 3,
+      "period": "Jan 2022 – Dez 2022",
+      "role": {
+        "de": "SAP Fiori/ABAP Developer",
+        "en": "SAP Fiori/ABAP Developer"
+      },
+      "company": "INTECIO GmbH",
+      "client": {
+        "de": "Schwarz IT / Lidl",
+        "en": "Schwarz IT / Lidl"
+      },
+      "clientPublic": true,
+      "location": "Remote",
+      "products": ["SAP Fiori", "SAPUI5", "ABAP", "CDS Views", "BOPF"],
+      "skills": ["SAP Fiori", "ABAP", "CDS Views", "BOPF", "OData"],
+      "highlight": false,
+      "description": {
+        "de": "SAP Fiori-Anwendung für Yard Logistics. Entwicklung von CDS Views, BOPF Business Objects und Custom Extensions. Backend-Logik in ABAP OO.",
+        "en": "SAP Fiori application for yard logistics. Development of CDS Views, BOPF Business Objects, and custom extensions. Backend logic in ABAP OO."
+      }
+    },
+    {
+      "id": "ewm",
+      "sortOrder": 4,
+      "period": "Jan 2021 – Dez 2021",
+      "role": {
+        "de": "SAP ABAP/Fiori Developer",
+        "en": "SAP ABAP/Fiori Developer"
+      },
+      "company": "INTECIO GmbH",
+      "client": {
+        "de": "vertraulich",
+        "en": "confidential"
+      },
+      "clientPublic": false,
+      "location": "Remote",
+      "products": ["SAP ABAP", "SAP Fiori", "BOPF", "SAP EWM"],
+      "skills": ["SAP ABAP", "SAP Fiori", "BOPF", "EWM"],
+      "highlight": false,
+      "description": {
+        "de": "Neuentwicklungen auf Basis von SAP ABAP und SAP Fiori im EWM-Umfeld. BOPF Business Objects, Custom Extensions.",
+        "en": "New development based on SAP ABAP and SAP Fiori in the EWM environment. BOPF Business Objects, custom extensions."
+      }
+    },
+    {
+      "id": "zeppelin",
+      "sortOrder": 5,
+      "period": "Jan 2018 – Dez 2020",
+      "role": {
+        "de": "SAP Fiori Consultant / Architect",
+        "en": "SAP Fiori Consultant / Architect"
+      },
+      "company": "INTECIO GmbH",
+      "client": {
+        "de": "Zeppelin Baumaschinen GmbH",
+        "en": "Zeppelin Construction Machines"
+      },
+      "clientPublic": true,
+      "location": "Garching bei München",
+      "products": ["SAP Fiori", "SAPUI5", "SAP Gateway", "OData"],
+      "skills": ["SAP Fiori", "SAPUI5", "SAP CS", "Konzeption", "Lösungsarchitektur"],
+      "highlight": true,
+      "description": {
+        "de": "Beratung und Konzeption für den strategischen SAP Fiori-Einsatz im Servicebereich. Erstellung von Lösungsstrategien und technischen Konzepten. Aufbau einer vollständigen SAP Fiori-Anwendungslandschaft. Entwicklung von SAP Fiori-Anwendungen auf Basis von SAPUI5.",
+        "en": "Consulting and solution design for strategic SAP Fiori adoption in customer service. Created solution strategies and technical concepts. Built a complete SAP Fiori application landscape. Developed SAP Fiori applications based on SAPUI5."
+      }
+    },
+    {
+      "id": "aryzta-mii",
+      "sortOrder": 6,
+      "period": "Jan 2017 – Dez 2019",
+      "role": {
+        "de": "SAP MII/MES Developer",
+        "en": "SAP MII/MES Developer"
+      },
+      "company": "INTECIO GmbH",
+      "client": {
+        "de": "ARYZTA",
+        "en": "ARYZTA"
+      },
+      "clientPublic": true,
+      "location": {
+        "de": "Halle, Polen, Irland",
+        "en": "Halle (Germany), Poland, Ireland"
+      },
+      "products": ["SAP MII", "SAP MES", "SAPUI5", "SAP ECC", "WebSockets"],
+      "skills": ["SAP MII", "SAP MES", "SAPUI5", "IIoT", "SAP ECC"],
+      "highlight": false,
+      "description": {
+        "de": "MES-Lösung auf SAP MII für Backproduktion und Qualitätskontrolle mit direkter SAP-ECC-Anbindung. IIoT-Hardwareintegration via WebSockets. SAP UI5-Frontends. Internationale Rollouts in Deutschland, Polen und Irland.",
+        "en": "MES solution on SAP MII for bakery production and quality control with direct SAP ECC integration. IIoT hardware integration via WebSockets. SAP UI5 frontends. International rollouts across Germany, Poland, and Ireland."
+      }
+    },
+    {
+      "id": "aryzta-middleware",
+      "sortOrder": 7,
+      "period": "Aug 2014 – Dez 2016",
+      "role": {
+        "de": "SAP MES Middleware Developer",
+        "en": "SAP MES Middleware Developer"
+      },
+      "company": "PARAGON Systemhaus GmbH",
+      "client": {
+        "de": "ARYZTA",
+        "en": "ARYZTA"
+      },
+      "clientPublic": true,
+      "location": "Eisleben",
+      "products": ["SAP Java Connector", "SAP Plant Connectivity", "SAP NetWeaver", "ABAP"],
+      "skills": ["SAP NetWeaver", "ABAP", "Java", "SAP JCo", "SAP PCo"],
+      "highlight": false,
+      "description": {
+        "de": "Middleware zur Kommunikation SAP ↔ Produktion/Logistik. Connector auf Basis SAP Java Connector für direkte Kommunikation zwischen Produktionsanlagen und SAP. NetWeaver-basierte Steuerung der Verpackungsanlagen. Eigenentwicklung mit ABAP UI auf dediziertem NetWeaver Server.",
+        "en": "Middleware for SAP ↔ production/logistics communication. Connector based on SAP Java Connector for direct communication between production systems and SAP. NetWeaver-based control of packaging lines. Custom development with ABAP UI on a dedicated NetWeaver server."
+      }
+    },
+    {
+      "id": "huk-coburg",
+      "sortOrder": 8,
+      "period": "Apr 2007 – Jul 2014",
+      "role": {
+        "de": "Software Developer / Architect",
+        "en": "Software Developer / Architect"
+      },
+      "company": "PARAGON Systemhaus GmbH",
+      "client": {
+        "de": "HUK-Coburg",
+        "en": "HUK-Coburg"
+      },
+      "clientPublic": true,
+      "location": "Coburg",
+      "products": ["WebSphere", "JSF", "Swing", "Web Services", "Hibernate", "Java EE"],
+      "skills": ["Java", "JSF", "WebSphere", "Web Services", "Performance-Optimierung"],
+      "highlight": true,
+      "description": {
+        "de": "Entwicklung und Wartung des SAFIR-Frameworks für Versicherungsanwendungen. Aufbau und Wartung der WebSphere ApplicationServer-Infrastruktur. Zentrale WebService-Schnittstellen. Integration mit Workflow-Infrastruktur und Vertriebsportal. Performance-Analyse und Optimierung von JSF-Webanwendungen.",
+        "en": "Development and maintenance of the SAFIR framework for insurance applications. Setup and maintenance of WebSphere Application Server infrastructure. Central web service interfaces. Integration with workflow infrastructure and sales portal. Performance analysis and optimization of JSF web applications."
+      }
+    }
+  ]
+}
