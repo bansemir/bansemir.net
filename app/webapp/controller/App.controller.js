@@ -1,20 +1,18 @@
 sap.ui.define([
     "net/bansemir/profile/controller/BaseController",
-    "sap/base/i18n/Localization",
-    "sap/ui/model/json/JSONModel"
-], function (BaseController, Localization, JSONModel) {
+    "sap/base/i18n/Localization"
+], function (BaseController, Localization) {
     "use strict";
 
     return BaseController.extend("net.bansemir.profile.controller.App", {
 
         onInit: function () {
-            var sLocale = this.getLocale();
-            this.getView().setModel(new JSONModel({ locale: sLocale }), "appView");
         },
 
-        onLanguageChange: function (oEvent) {
-            var sLanguage = oEvent.getParameter("selectedItem").getKey();
-            Localization.setLanguage(sLanguage);
+        onLanguageToggle: function () {
+            var sLocale = this.getLocale();
+            var sTarget = sLocale === "de" ? "en" : "de";
+            Localization.setLanguage(sTarget);
             location.reload();
         },
 
