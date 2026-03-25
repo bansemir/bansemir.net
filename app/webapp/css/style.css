@@ -1,10 +1,13 @@
 .sapFShellBar {
-    background-color: #354a5f;
+    background-color: #354a5f !important;
 }
 .sapFShellBar .sapFShellBarOverflowToolbar {
-    background-color: #354a5f;
+    background-color: #354a5f !important;
+}
+.sapFShellBar .sapMTitle {
+    color: #fff !important;
 }
 .sapFShellBar .sapMBtn .sapMBtnIcon,
 .sapFShellBar .sapMBtn .sapMBtnContent {
-    color: #fff;
+    color: #fff !important;
 }

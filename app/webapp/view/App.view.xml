@@ -5,30 +5,32 @@
     xmlns:f="sap.f"
     xmlns:core="sap.ui.core"
     displayBlock="true">
-    <Page showHeader="false" enableScrolling="false">
-        <f:ShellBar
-            title="{config>/owner/name}"
-            secondTitle="{i18n>hero.role}"
-            showNavButton="false">
-            <f:additionalContent>
-                <OverflowToolbarButton
-                    id="themeToggle"
-                    icon="sap-icon://light-mode"
-                    type="Transparent"
-                    press=".onThemeToggle"
-                    tooltip="{i18n>nav.themeToggle}" />
-                <OverflowToolbarButton
-                    icon="sap-icon://globe"
-                    type="Transparent"
-                    press=".onLanguageToggle"
-                    tooltip="{i18n>nav.langSwitch}" />
-                <OverflowToolbarButton
-                    icon="sap-icon://source-code"
-                    type="Transparent"
-                    tooltip="GitHub"
-                    press=".onOpenGitHub" />
-            </f:additionalContent>
-        </f:ShellBar>
+    <Page enableScrolling="false">
+        <customHeader>
+            <f:ShellBar
+                title="{config>/owner/name}"
+                secondTitle="{i18n>hero.role}"
+                showNavButton="false">
+                <f:additionalContent>
+                    <OverflowToolbarButton
+                        id="themeToggle"
+                        icon="sap-icon://light-mode"
+                        type="Transparent"
+                        press=".onThemeToggle"
+                        tooltip="{i18n>nav.themeToggle}" />
+                    <OverflowToolbarButton
+                        icon="sap-icon://globe"
+                        type="Transparent"
+                        press=".onLanguageToggle"
+                        tooltip="{i18n>nav.langSwitch}" />
+                    <OverflowToolbarButton
+                        icon="sap-icon://source-code"
+                        type="Transparent"
+                        tooltip="GitHub"
+                        press=".onOpenGitHub" />
+                </f:additionalContent>
+            </f:ShellBar>
+        </customHeader>
         <App id="app" />
         <footer>
             <OverflowToolbar>
