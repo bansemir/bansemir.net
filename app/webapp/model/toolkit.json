@@ -1,0 +1,97 @@
+{
+  "toolkit": {
+    "name": "SAP Accelerator Toolkit",
+    "basePath": "/Library/Vibes/toolkit",
+    "gitRepos": "Alle Repos im Git-Account des Owners",
+    "totalLines": 85000,
+    "totalRules": 201,
+    "totalTests": 4500,
+    "totalDomains": 10,
+    "result": {
+      "de": "30\u201350% schnellere Entwicklungszyklen bei höherer Qualität",
+      "en": "30\u201350% faster development cycles with higher quality"
+    }
+  },
+  "tools": [
+    {
+      "id": "field-change",
+      "localPath": "/Library/Vibes/toolkit/field-change",
+      "port": 9001,
+      "title": {
+        "de": "Field-Change-Analyse",
+        "en": "Field-change analysis"
+      },
+      "description": {
+        "de": "Automatisierte Anforderungsanalyse auf Basis von Felddefinitionen und Änderungshistorie.",
+        "en": "Automated requirements analysis based on field definitions and change history."
+      },
+      "stats": {
+        "changeTypes": 13,
+        "impactLayers": 9,
+        "examples": 29,
+        "lines": 20800
+      }
+    },
+    {
+      "id": "code-review",
+      "localPath": "/Library/Vibes/toolkit/code-review",
+      "port": 9002,
+      "title": {
+        "de": "Code Review",
+        "en": "Code review"
+      },
+      "description": {
+        "de": "Statische Analyse mit 200+ SAP-spezifischen Prüfregeln für ABAP, CDS und Fiori.",
+        "en": "Static analysis with 200+ SAP-specific validation rules for ABAP, CDS, and Fiori."
+      },
+      "stats": {
+        "rules": 201,
+        "ruleModules": 16,
+        "examples": 31,
+        "tests": 1515,
+        "lines": 23600
+      }
+    },
+    {
+      "id": "rap-generator",
+      "localPath": "/Library/Vibes/toolkit/rap-generator",
+      "port": 9003,
+      "title": {
+        "de": "RAP/Fiori-Generator",
+        "en": "RAP/Fiori generator"
+      },
+      "description": {
+        "de": "Skelettgenerierung für RAP Business Objects und Fiori Elements Apps aus Fachspezifikationen.",
+        "en": "Skeleton generation for RAP Business Objects and Fiori Elements apps from functional specs."
+      },
+      "stats": {
+        "floorplans": 6,
+        "templates": 18,
+        "examples": 24,
+        "tests": 1660,
+        "lines": 20300
+      }
+    },
+    {
+      "id": "ticket-analysis",
+      "localPath": "/Library/Vibes/toolkit/ticket-analysis",
+      "port": 9004,
+      "title": {
+        "de": "Ticket-Bewertung",
+        "en": "Ticket evaluation"
+      },
+      "description": {
+        "de": "Score-basierte Klassifikation von Anforderungstickets nach Aufwand, Risiko und Umsetzbarkeit.",
+        "en": "Score-based classification of requirement tickets by effort, risk, and feasibility."
+      },
+      "stats": {
+        "requestTypes": 10,
+        "requestSubtypes": 28,
+        "solutionTemplates": 60,
+        "examples": 31,
+        "tests": 1344,
+        "lines": 20100
+      }
+    }
+  ]
+}

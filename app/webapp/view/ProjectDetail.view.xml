@@ -1,0 +1,13 @@
+<mvc:View
+    controllerName="net.bansemir.profile.controller.ProjectDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="projectDetailPage"
+        title="{i18n>projects.heading}"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+        <content>
+            <Text text="{i18n>projects.showDetails}" />
+        </content>
+    </Page>
+</mvc:View>
