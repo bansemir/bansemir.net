@@ -55,7 +55,8 @@ sap.ui.define([
         },
 
         onOpenGitHub: function () {
-            window.open("https://github.com/bansemir/bansemir.net", "_blank");
+            var sUrl = this.getOwnerComponent().getModel("config").getProperty("/social/github");
+            window.open(sUrl, "_blank");
         }
     });
 });

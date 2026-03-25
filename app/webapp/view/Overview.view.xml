@@ -96,7 +96,7 @@
                                 <Text text="{i18n>builtWith.example4Text}" />
                             </Panel>
 
-                            <Link text="{i18n>builtWith.viewOnGithub}" href="https://github.com/bansemir/bansemir.net" target="_blank" class="sapUiSmallMarginTop" />
+                            <Link text="{i18n>builtWith.viewOnGithub}" href="{config>/social/github}" target="_blank" class="sapUiSmallMarginTop" />
                         </VBox>
                     </uxap:ObjectPageSubSection>
                 </uxap:subSections>
@@ -135,7 +135,7 @@
                                             </form:FormElement>
                                             <form:FormElement label="{i18n>contact.linkedinLabel}">
                                                 <form:fields>
-                                                    <Link text="{i18n>contact.linkedin}" href="https://linkedin.com/in/carsten-bansemir" target="_blank" />
+                                                    <Link text="{i18n>contact.linkedin}" href="{config>/social/linkedin}" target="_blank" />
                                                 </form:fields>
                                             </form:FormElement>
                                         </form:formElements>

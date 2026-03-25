@@ -16,7 +16,10 @@ sap.ui.define([
         },
 
         onOpenCalendly: function () {
-            window.open("https://calendly.com/carsten-bansemir", "_blank");
+            var sUrl = this.getOwnerComponent().getModel("config").getProperty("/services/calendlyUrl");
+            if (sUrl) {
+                window.open(sUrl, "_blank");
+            }
         },
 
         _flattenSkills: function () {

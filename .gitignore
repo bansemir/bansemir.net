@@ -8,3 +8,7 @@ content/
 .claude/launch.json
 .playwright-mcp/
 app/webapp/model/config.json
+de/index.html
+en/index.html
+legal/impressum.html
+legal/datenschutz.html
