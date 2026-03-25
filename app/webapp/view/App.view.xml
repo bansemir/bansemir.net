@@ -40,6 +40,8 @@
                 <Link text="GitHub" href="{config>/social/github}" target="_blank" />
                 <ToolbarSeparator />
                 <Link text="LinkedIn" href="{config>/social/linkedin}" target="_blank" />
+                <ToolbarSeparator />
+                <Link text="GULP" href="{config>/social/gulp}" target="_blank" />
                 <ToolbarSpacer />
                 <Text text="{i18n>footer.copyright}" />
                 <ToolbarSeparator />
