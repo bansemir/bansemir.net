@@ -5,8 +5,8 @@ sap.ui.define([
 ], function (BaseController, Localization, Theming) {
     "use strict";
 
-    var LIGHT_THEME = "sap_horizon";
-    var DARK_THEME = "sap_horizon_dark";
+    var LIGHT_THEME = "sap_fiori_3";
+    var DARK_THEME = "sap_fiori_3_dark";
 
     return BaseController.extend("net.bansemir.profile.controller.App", {
 
