@@ -29,7 +29,7 @@
 
         <uxap:headerContent>
             <FlexBox alignItems="Start" wrap="Wrap">
-                <Avatar src="../../assets/portrait.jpg" displaySize="XL" displayShape="Circle" tooltip="{config>/owner/name}" />
+                <Avatar src="assets/portrait.jpg" displaySize="XL" displayShape="Circle" tooltip="{config>/owner/name}" />
                 <VBox class="sapUiSmallMarginBegin">
                     <ObjectAttribute title="{i18n>hero.role}" text="{i18n>hero.headline}" />
                     <ObjectStatus text="{i18n>contact.status}" state="Success" />

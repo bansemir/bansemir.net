@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sapui5-dev",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/banse/claude/homepage/app && npx ui5 serve --port 8080"],
+      "port": 8080
+    }
+  ]
+}

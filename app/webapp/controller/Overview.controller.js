@@ -20,28 +20,40 @@ sap.ui.define([
         },
 
         _flattenSkills: function () {
-            var oSkillsModel = this.getModel("skills");
-            oSkillsModel.attachEventOnce("requestCompleted", function () {
-                var aCategories = oSkillsModel.getProperty("/categories") || [];
-                var sLocale = this.getLocale();
-                var aFlat = [];
-                aCategories.forEach(function (oCategory) {
-                    var sCategoryLabel = oCategory.label
-                        ? (oCategory.label[sLocale] || oCategory.label.de)
-                        : oCategory.id;
-                    (oCategory.skills || []).forEach(function (oSkill) {
-                        aFlat.push({
-                            name: oSkill.name,
-                            category: sCategoryLabel,
-                            categoryId: oCategory.id,
-                            years: oSkill.years,
-                            level: oSkill.level,
-                            projects: oSkill.projects
-                        });
+            var oSkillsModel = this.getOwnerComponent().getModel("skills");
+            if (!oSkillsModel) {
+                return;
+            }
+            var aCategories = oSkillsModel.getProperty("/categories");
+            if (aCategories) {
+                this._buildFlatSkills(oSkillsModel);
+            } else {
+                oSkillsModel.attachEventOnce("requestCompleted", function () {
+                    this._buildFlatSkills(oSkillsModel);
+                }.bind(this));
+            }
+        },
+
+        _buildFlatSkills: function (oSkillsModel) {
+            var aCategories = oSkillsModel.getProperty("/categories") || [];
+            var sLocale = this.getLocale();
+            var aFlat = [];
+            aCategories.forEach(function (oCategory) {
+                var sCategoryLabel = oCategory.label
+                    ? (oCategory.label[sLocale] || oCategory.label.de)
+                    : oCategory.id;
+                (oCategory.skills || []).forEach(function (oSkill) {
+                    aFlat.push({
+                        name: oSkill.name,
+                        category: sCategoryLabel,
+                        categoryId: oCategory.id,
+                        years: oSkill.years,
+                        level: oSkill.level,
+                        projects: oSkill.projects
                     });
                 });
-                this.setModel(new JSONModel(aFlat), "skillsFlat");
-            }.bind(this));
+            });
+            this.getView().setModel(new JSONModel(aFlat), "skillsFlat");
         },
 
         onSkillSearch: function (oEvent) {
