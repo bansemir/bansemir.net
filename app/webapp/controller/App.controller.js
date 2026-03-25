@@ -1,12 +1,37 @@
 sap.ui.define([
     "net/bansemir/profile/controller/BaseController",
-    "sap/base/i18n/Localization"
-], function (BaseController, Localization) {
+    "sap/base/i18n/Localization",
+    "sap/ui/core/Theming"
+], function (BaseController, Localization, Theming) {
     "use strict";
+
+    var LIGHT_THEME = "sap_horizon";
+    var DARK_THEME = "sap_horizon_dark";
 
     return BaseController.extend("net.bansemir.profile.controller.App", {
 
         onInit: function () {
+            var sSaved = localStorage.getItem("bansemir.theme");
+            if (sSaved && sSaved !== Theming.getTheme()) {
+                Theming.setTheme(sSaved);
+            }
+            this._updateThemeIcon();
+        },
+
+        onThemeToggle: function () {
+            var bIsDark = Theming.getTheme().indexOf("dark") > -1;
+            var sTarget = bIsDark ? LIGHT_THEME : DARK_THEME;
+            Theming.setTheme(sTarget);
+            localStorage.setItem("bansemir.theme", sTarget);
+            this._updateThemeIcon();
+        },
+
+        _updateThemeIcon: function () {
+            var bIsDark = Theming.getTheme().indexOf("dark") > -1;
+            var oBtn = this.byId("themeToggle");
+            if (oBtn) {
+                oBtn.setIcon(bIsDark ? "sap-icon://light-mode" : "sap-icon://dark-mode");
+            }
         },
 
         onLanguageToggle: function () {

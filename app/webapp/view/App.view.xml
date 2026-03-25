@@ -9,21 +9,26 @@
         <f:ShellBar
             title="{config>/owner/name}"
             secondTitle="{i18n>hero.role}"
-            showNavButton="false">
-            <f:additionalContent>
-                <OverflowToolbarButton
-                    icon="sap-icon://globe"
-                    text="{i18n>nav.langSwitch}"
-                    type="Transparent"
-                    press=".onLanguageToggle"
-                    tooltip="{i18n>language.select.label}" />
-                <OverflowToolbarButton
-                    icon="sap-icon://source-code"
-                    type="Transparent"
-                    tooltip="GitHub"
-                    press=".onOpenGitHub" />
-            </f:additionalContent>
-        </f:ShellBar>
+            showNavButton="false" />
+        <Toolbar design="Solid">
+            <ToolbarSpacer />
+            <Button
+                id="themeToggle"
+                icon="sap-icon://light-mode"
+                type="Transparent"
+                press=".onThemeToggle"
+                tooltip="{i18n>nav.themeToggle}" />
+            <Button
+                text="{i18n>nav.langSwitch}"
+                type="Transparent"
+                press=".onLanguageToggle"
+                tooltip="{i18n>language.select.label}" />
+            <Button
+                icon="sap-icon://source-code"
+                type="Transparent"
+                tooltip="GitHub"
+                press=".onOpenGitHub" />
+        </Toolbar>
         <App id="app" />
         <footer>
             <OverflowToolbar>
