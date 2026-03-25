@@ -37,9 +37,9 @@
                 <ToolbarSeparator />
                 <Link text="{i18n>footer.privacy}" href="../../legal/datenschutz.html" />
                 <ToolbarSeparator />
-                <Link text="GitHub" href="https://github.com/bansemir/bansemir.net" target="_blank" />
+                <Link text="GitHub" href="{config>/social/github}" target="_blank" />
                 <ToolbarSeparator />
-                <Link text="LinkedIn" href="https://linkedin.com/in/carsten-bansemir" target="_blank" />
+                <Link text="LinkedIn" href="{config>/social/linkedin}" target="_blank" />
                 <ToolbarSpacer />
                 <Text text="{i18n>footer.copyright}" />
                 <ToolbarSeparator />
