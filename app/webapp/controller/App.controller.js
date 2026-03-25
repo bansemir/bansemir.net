@@ -4,26 +4,38 @@ sap.ui.define([
 ], function (BaseController, Theming) {
     "use strict";
 
-    var LIGHT_THEME = "sap_fiori_3";
-    var DARK_THEME = "sap_fiori_3_dark";
+    var THEMES = { light: "sap_fiori_3", dark: "sap_fiori_3_dark" };
 
     return BaseController.extend("net.bansemir.profile.controller.App", {
 
         onInit: function () {
             var sSaved = localStorage.getItem("bansemir.theme");
-            if (sSaved && (sSaved === LIGHT_THEME || sSaved === DARK_THEME) && sSaved !== Theming.getTheme()) {
-                Theming.setTheme(sSaved);
-            } else if (sSaved && sSaved !== LIGHT_THEME && sSaved !== DARK_THEME) {
-                localStorage.removeItem("bansemir.theme");
+            if (sSaved && THEMES[sSaved]) {
+                var sTarget = THEMES[sSaved];
+                if (sTarget !== Theming.getTheme()) {
+                    Theming.setTheme(sTarget);
+                }
             }
+            this._applyLanguageFromStorage();
             this._updateThemeIcon();
+        },
+
+        _applyLanguageFromStorage: function () {
+            var sSearch = window.location.search;
+            if (sSearch.indexOf("sap-language") > -1) {
+                return;
+            }
+            var sSavedLang = localStorage.getItem("bansemir.lang");
+            if (sSavedLang && sSavedLang !== this.getLocale()) {
+                window.location.href = window.location.pathname + "?sap-language=" + sSavedLang;
+            }
         },
 
         onThemeToggle: function () {
             var bIsDark = Theming.getTheme().indexOf("dark") > -1;
-            var sTarget = bIsDark ? LIGHT_THEME : DARK_THEME;
-            Theming.setTheme(sTarget);
-            localStorage.setItem("bansemir.theme", sTarget);
+            var sMode = bIsDark ? "light" : "dark";
+            Theming.setTheme(THEMES[sMode]);
+            localStorage.setItem("bansemir.theme", sMode);
             this._updateThemeIcon();
         },
 
@@ -38,8 +50,8 @@ sap.ui.define([
         onLanguageToggle: function () {
             var sLocale = this.getLocale();
             var sTarget = sLocale === "de" ? "en" : "de";
-            var sUrl = window.location.pathname + "?sap-language=" + sTarget;
-            window.location.href = sUrl;
+            localStorage.setItem("bansemir.lang", sTarget);
+            window.location.href = window.location.pathname + "?sap-language=" + sTarget;
         },
 
         onOpenGitHub: function () {
