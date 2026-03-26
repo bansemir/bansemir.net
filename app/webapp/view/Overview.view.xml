@@ -84,7 +84,7 @@
                             <HBox justifyContent="SpaceAround" wrap="Wrap" class="sapUiMediumMarginBottom">
                                 <GenericTile header="{i18n>builtWith.statsImplementation}" frameType="OneByOne">
                                     <TileContent>
-                                        <NumericContent value="2,5" scale="h" withMargin="false" />
+                                        <NumericContent value="63" scale="min" withMargin="false" />
                                     </TileContent>
                                 </GenericTile>
                                 <GenericTile header="{i18n>builtWith.statsWorkpackages}" frameType="OneByOne">
@@ -94,7 +94,7 @@
                                 </GenericTile>
                                 <GenericTile header="{i18n>builtWith.statsAgents}" frameType="OneByOne">
                                     <TileContent>
-                                        <NumericContent value="10" withMargin="false" />
+                                        <NumericContent value="9" withMargin="false" />
                                     </TileContent>
                                 </GenericTile>
                                 <GenericTile header="{i18n>builtWith.statsLines}" frameType="OneByOne">
