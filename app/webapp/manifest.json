@@ -64,6 +64,10 @@
             "config": {
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "model/config.json"
+            },
+            "casestudy": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/casestudy.json"
             }
         },
         "routing": {
@@ -85,6 +89,11 @@
                     "name": "projectDetail",
                     "pattern": "project/{projectId}",
                     "target": "projectDetail"
+                },
+                {
+                    "name": "caseStudy",
+                    "pattern": "case-study",
+                    "target": "caseStudy"
                 }
             ],
             "targets": {
@@ -94,6 +103,10 @@
                 },
                 "projectDetail": {
                     "name": "ProjectDetail",
+                    "level": 2
+                },
+                "caseStudy": {
+                    "name": "CaseStudy",
                     "level": 2
                 }
             }

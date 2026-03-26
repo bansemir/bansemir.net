@@ -24,6 +24,22 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://bansemir.net/case-study/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://bansemir.net/case-study/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://bansemir.net/case-study/en/" />
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bansemir.net/case-study/en/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://bansemir.net/case-study/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://bansemir.net/case-study/en/" />
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://bansemir.net/legal/impressum.html</loc>
         <lastmod>2026-03-25</lastmod>
         <changefreq>yearly</changefreq>
