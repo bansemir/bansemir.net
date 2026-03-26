@@ -22,6 +22,7 @@
                     <Text text="{i18n>hero.headline}" />
                 </uxap:snappedContent>
                 <uxap:actions>
+                    <Button text="{i18n>builtWith.caseStudyButton}" type="Ghost" icon="sap-icon://document-text" press=".onNavToCaseStudy" />
                     <Button text="{i18n>hero.cta}" type="Emphasized" press=".onOpenCalendly" />
                 </uxap:actions>
             </uxap:ObjectPageDynamicHeaderTitle>
@@ -49,6 +50,39 @@
                     </uxap:ObjectPageSubSection>
                     <uxap:ObjectPageSubSection title="{i18n>positioning.aiPractice.title}">
                         <FormattedText htmlText="{i18n>positioning.aiPractice.text}" />
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>caseStudy.sectionTitle}" id="caseStudyTeaser">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <VBox>
+                            <HBox justifyContent="SpaceAround" wrap="Wrap" class="sapUiSmallMarginBottom">
+                                <GenericTile header="{i18n>builtWith.statsImplementation}" frameType="OneByOne">
+                                    <TileContent>
+                                        <NumericContent value="63" scale="min" withMargin="false" />
+                                    </TileContent>
+                                </GenericTile>
+                                <GenericTile header="{i18n>builtWith.statsWorkpackages}" frameType="OneByOne">
+                                    <TileContent>
+                                        <NumericContent value="21" withMargin="false" />
+                                    </TileContent>
+                                </GenericTile>
+                                <GenericTile header="{i18n>builtWith.statsAgents}" frameType="OneByOne">
+                                    <TileContent>
+                                        <NumericContent value="9" withMargin="false" />
+                                    </TileContent>
+                                </GenericTile>
+                                <GenericTile header="{i18n>builtWith.statsLines}" frameType="OneByOne">
+                                    <TileContent>
+                                        <NumericContent value="11k" withMargin="false" />
+                                    </TileContent>
+                                </GenericTile>
+                            </HBox>
+                            <FormattedText htmlText="{i18n>caseStudy.teaserText}" class="sapUiSmallMarginBottom" />
+                            <Button text="{i18n>caseStudy.readMore}" type="Emphasized" press=".onNavToCaseStudy" class="sapUiSmallMarginTop" />
+                        </VBox>
                     </uxap:ObjectPageSubSection>
                 </uxap:subSections>
             </uxap:ObjectPageSection>
@@ -81,29 +115,6 @@
                 <uxap:subSections>
                     <uxap:ObjectPageSubSection>
                         <VBox>
-                            <HBox justifyContent="SpaceAround" wrap="Wrap" class="sapUiMediumMarginBottom">
-                                <GenericTile header="{i18n>builtWith.statsImplementation}" frameType="OneByOne">
-                                    <TileContent>
-                                        <NumericContent value="63" scale="min" withMargin="false" />
-                                    </TileContent>
-                                </GenericTile>
-                                <GenericTile header="{i18n>builtWith.statsWorkpackages}" frameType="OneByOne">
-                                    <TileContent>
-                                        <NumericContent value="21" withMargin="false" />
-                                    </TileContent>
-                                </GenericTile>
-                                <GenericTile header="{i18n>builtWith.statsAgents}" frameType="OneByOne">
-                                    <TileContent>
-                                        <NumericContent value="9" withMargin="false" />
-                                    </TileContent>
-                                </GenericTile>
-                                <GenericTile header="{i18n>builtWith.statsLines}" frameType="OneByOne">
-                                    <TileContent>
-                                        <NumericContent value="11k" withMargin="false" />
-                                    </TileContent>
-                                </GenericTile>
-                            </HBox>
-
                             <FormattedText htmlText="{i18n>builtWith.intro}" class="sapUiSmallMarginBottom" />
 
                             <Panel headerText="{i18n>builtWith.example1Title}" expandable="true" expanded="false">
