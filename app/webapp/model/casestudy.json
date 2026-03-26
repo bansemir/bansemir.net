@@ -44,8 +44,8 @@
         {
             "id": "hook",
             "title": {
-                "de": "63 Minuten statt 4-5 Wochen",
-                "en": "63 Minutes Instead of 4-5 Weeks"
+                "de": "1 Stunde statt 4-5 Wochen",
+                "en": "1 Hour Instead of 4-5 Weeks"
             },
             "text": {
                 "de": "Das PRD schätzte 4-5 Wochen für die Umsetzung. Die reine Implementierung dauerte 63 Minuten. Mit Planung, Tests, Deployment und Post-Launch-Fixes waren es insgesamt 5 Stunden -- an einem Abend. 21 Workpackages, 30 Dateien, 9 spezialisierte AI-Agenten, 10.834 Zeilen Code.",
