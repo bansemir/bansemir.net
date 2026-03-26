@@ -60,8 +60,8 @@
                 "en": "Starting Point"
             },
             "text": {
-                "de": "Der Content wurde in einer Cowork-Session vorbereitet: Projektbeschreibungen, Skills-Daten, Toolkit-Texte -- alles als strukturierte JSON-Dateien. Ein PRD (v2.1, 997 Zeilen) definierte Architektur, MVC-Regeln und Agenten-Zuordnung. Die Basis für den Build war gelegt.",
-                "en": "All content was prepared in a cowork session: project descriptions, skills data, toolkit texts -- structured as JSON files. A PRD (v2.1, 997 lines) defined the architecture, MVC rules and agent assignments. The foundation for the build was in place."
+                "de": "Der Content wurde in einer Cowork-Session vorbereitet: Projektbeschreibungen, Skills-Daten, Toolkit-Texte -- alles als strukturierte JSON-Dateien. Ein <a href=\"https://github.com/bansemir/bansemir.net/blob/main/docs/PRD.md\" target=\"_blank\">PRD (v2.1, 997 Zeilen)</a> definierte Architektur, MVC-Regeln und Agenten-Zuordnung. Die Basis für den Build war gelegt.",
+                "en": "All content was prepared in a cowork session: project descriptions, skills data, toolkit texts -- structured as JSON files. A <a href=\"https://github.com/bansemir/bansemir.net/blob/main/docs/PRD.md\" target=\"_blank\">PRD (v2.1, 997 lines)</a> defined the architecture, MVC rules and agent assignments. The foundation for the build was in place."
             },
             "images": [
                 {
