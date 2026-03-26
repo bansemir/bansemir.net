@@ -32,16 +32,19 @@
             <items>
                 <IconTabFilter text="{i18n>toolkit.fieldChange.title}" key="field-change">
                     <VBox class="sapUiSmallMargin">
+                        <Image src="assets/toolkit/field-change.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
                         <Text text="{i18n>toolkit.fieldChange.description}" />
                     </VBox>
                 </IconTabFilter>
                 <IconTabFilter text="{i18n>toolkit.codeReview.title}" key="code-review">
                     <VBox class="sapUiSmallMargin">
+                        <Image src="assets/toolkit/review-assistant.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
                         <Text text="{i18n>toolkit.codeReview.description}" />
                     </VBox>
                 </IconTabFilter>
                 <IconTabFilter text="{i18n>toolkit.rapGenerator.title}" key="rap-generator">
                     <VBox class="sapUiSmallMargin">
+                        <Image src="assets/toolkit/skeleton-generator.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
                         <Text text="{i18n>toolkit.rapGenerator.description}" />
                     </VBox>
                 </IconTabFilter>
