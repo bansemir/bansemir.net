@@ -11,3 +11,9 @@
 .sapFShellBar .sapMBtn .sapMBtnContent {
     color: #fff !important;
 }
+.sapMImg.caseStudyImage {
+    max-width: 800px !important;
+    margin: 0 auto;
+    border: 1px solid #e7e5e4;
+    border-radius: 8px;
+}

@@ -44,6 +44,8 @@ function flattenContent(obj) {
 var templates = [
     { tpl: "de/index.template.html", content: "content/landing-de.json", lang: "de" },
     { tpl: "en/index.template.html", content: "content/landing-en.json", lang: "en" },
+    { tpl: "case-study/index.template.html", content: "content/casestudy-de.json", lang: "de" },
+    { tpl: "case-study/en/index.template.html", content: "content/casestudy-en.json", lang: "en" },
     { tpl: "legal/impressum.template.html", content: null, lang: "de" },
     { tpl: "legal/datenschutz.template.html", content: null, lang: "de" }
 ];

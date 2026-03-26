@@ -81,6 +81,29 @@
                 <uxap:subSections>
                     <uxap:ObjectPageSubSection>
                         <VBox>
+                            <HBox justifyContent="SpaceAround" wrap="Wrap" class="sapUiMediumMarginBottom">
+                                <GenericTile header="{i18n>builtWith.statsImplementation}" frameType="OneByOne">
+                                    <TileContent>
+                                        <NumericContent value="2,5" scale="h" withMargin="false" />
+                                    </TileContent>
+                                </GenericTile>
+                                <GenericTile header="{i18n>builtWith.statsWorkpackages}" frameType="OneByOne">
+                                    <TileContent>
+                                        <NumericContent value="21" withMargin="false" />
+                                    </TileContent>
+                                </GenericTile>
+                                <GenericTile header="{i18n>builtWith.statsAgents}" frameType="OneByOne">
+                                    <TileContent>
+                                        <NumericContent value="10" withMargin="false" />
+                                    </TileContent>
+                                </GenericTile>
+                                <GenericTile header="{i18n>builtWith.statsLines}" frameType="OneByOne">
+                                    <TileContent>
+                                        <NumericContent value="11k" withMargin="false" />
+                                    </TileContent>
+                                </GenericTile>
+                            </HBox>
+
                             <FormattedText htmlText="{i18n>builtWith.intro}" class="sapUiSmallMarginBottom" />
 
                             <Panel headerText="{i18n>builtWith.example1Title}" expandable="true" expanded="false">
@@ -97,6 +120,7 @@
                             </Panel>
 
                             <Link text="{i18n>builtWith.viewOnGithub}" href="{config>/social/github}" target="_blank" class="sapUiSmallMarginTop" />
+                            <Button text="{i18n>builtWith.caseStudyLink}" type="Emphasized" press=".onNavToCaseStudy" class="sapUiSmallMarginTop" />
                         </VBox>
                     </uxap:ObjectPageSubSection>
                 </uxap:subSections>

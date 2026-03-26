@@ -81,6 +81,10 @@ sap.ui.define([
             var oContext = oEvent.getSource().getBindingContext("projects");
             var sProjectId = oContext.getProperty("id");
             this.navTo("projectDetail", { projectId: sProjectId });
+        },
+
+        onNavToCaseStudy: function () {
+            this.navTo("caseStudy");
         }
     });
 });

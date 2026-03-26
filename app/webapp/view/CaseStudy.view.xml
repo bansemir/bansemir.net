@@ -1,0 +1,159 @@
+<mvc:View
+    controllerName="net.bansemir.profile.controller.CaseStudy"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:uxap="sap.uxap"
+    core:require="{ formatter: 'net/bansemir/profile/model/formatter' }">
+
+    <uxap:ObjectPageLayout id="caseStudyPage" showTitleInHeaderContent="true">
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:heading>
+                    <Title text="{path: 'casestudy>/title', formatter: 'formatter.formatLocalized'}" />
+                </uxap:heading>
+                <uxap:snappedHeading>
+                    <Title text="{path: 'casestudy>/title', formatter: 'formatter.formatLocalized'}" />
+                </uxap:snappedHeading>
+                <uxap:expandedContent>
+                    <Text text="{path: 'casestudy>/subtitle', formatter: 'formatter.formatLocalized'}" />
+                </uxap:expandedContent>
+                <uxap:snappedContent>
+                    <Text text="{path: 'casestudy>/subtitle', formatter: 'formatter.formatLocalized'}" />
+                </uxap:snappedContent>
+                <uxap:navigationActions>
+                    <Button text="{i18n>caseStudy.backToOverview}" press=".onNavBack" type="Back" />
+                </uxap:navigationActions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:headerContent>
+            <HBox justifyContent="SpaceAround" wrap="Wrap">
+                <GenericTile header="{path: 'casestudy>/stats/0/label', formatter: 'formatter.formatLocalized'}" frameType="OneByOne">
+                    <TileContent>
+                        <NumericContent value="{path: 'casestudy>/stats/0/value', formatter: 'formatter.formatLocalized'}" withMargin="false" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile header="{path: 'casestudy>/stats/1/label', formatter: 'formatter.formatLocalized'}" frameType="OneByOne">
+                    <TileContent>
+                        <NumericContent value="{path: 'casestudy>/stats/1/value', formatter: 'formatter.formatLocalized'}" withMargin="false" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile header="{path: 'casestudy>/stats/2/label', formatter: 'formatter.formatLocalized'}" frameType="OneByOne">
+                    <TileContent>
+                        <NumericContent value="{path: 'casestudy>/stats/2/value', formatter: 'formatter.formatLocalized'}" withMargin="false" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile header="{path: 'casestudy>/stats/3/label', formatter: 'formatter.formatLocalized'}" frameType="OneByOne">
+                    <TileContent>
+                        <NumericContent value="{path: 'casestudy>/stats/3/value', formatter: 'formatter.formatLocalized'}" withMargin="false" />
+                    </TileContent>
+                </GenericTile>
+            </HBox>
+        </uxap:headerContent>
+
+        <uxap:sections>
+            <uxap:ObjectPageSection title="{path: 'casestudy>/chapters/0/title', formatter: 'formatter.formatLocalized'}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <Text text="{path: 'casestudy>/chapters/0/text', formatter: 'formatter.formatLocalized'}" />
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{path: 'casestudy>/chapters/1/title', formatter: 'formatter.formatLocalized'}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <VBox>
+                            <Text text="{path: 'casestudy>/chapters/1/text', formatter: 'formatter.formatLocalized'}" class="sapUiSmallMarginBottom" />
+                            <Image src="{casestudy>/chapters/1/images/0/src}" alt="{path: 'casestudy>/chapters/1/images/0/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/1/images/0/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                        </VBox>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{path: 'casestudy>/chapters/2/title', formatter: 'formatter.formatLocalized'}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <VBox>
+                            <Text text="{path: 'casestudy>/chapters/2/text', formatter: 'formatter.formatLocalized'}" class="sapUiSmallMarginBottom" />
+                            <Image src="{casestudy>/chapters/2/images/0/src}" alt="{path: 'casestudy>/chapters/2/images/0/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/2/images/0/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                            <Image src="{casestudy>/chapters/2/images/1/src}" alt="{path: 'casestudy>/chapters/2/images/1/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/2/images/1/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                        </VBox>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{path: 'casestudy>/chapters/3/title', formatter: 'formatter.formatLocalized'}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <VBox>
+                            <Text text="{path: 'casestudy>/chapters/3/text', formatter: 'formatter.formatLocalized'}" class="sapUiSmallMarginBottom" />
+                            <Image src="{casestudy>/chapters/3/images/0/src}" alt="{path: 'casestudy>/chapters/3/images/0/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/3/images/0/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                            <Image src="{casestudy>/chapters/3/images/1/src}" alt="{path: 'casestudy>/chapters/3/images/1/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/3/images/1/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                        </VBox>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{path: 'casestudy>/chapters/4/title', formatter: 'formatter.formatLocalized'}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <VBox>
+                            <Text text="{path: 'casestudy>/chapters/4/text', formatter: 'formatter.formatLocalized'}" class="sapUiSmallMarginBottom" />
+                            <Image src="{casestudy>/chapters/4/images/0/src}" alt="{path: 'casestudy>/chapters/4/images/0/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/4/images/0/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                            <Image src="{casestudy>/chapters/4/images/1/src}" alt="{path: 'casestudy>/chapters/4/images/1/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/4/images/1/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                        </VBox>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{path: 'casestudy>/chapters/5/title', formatter: 'formatter.formatLocalized'}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <VBox>
+                            <Text text="{path: 'casestudy>/chapters/5/text', formatter: 'formatter.formatLocalized'}" class="sapUiSmallMarginBottom" />
+                            <Image src="{casestudy>/chapters/5/images/0/src}" alt="{path: 'casestudy>/chapters/5/images/0/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/5/images/0/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                            <Image src="{casestudy>/chapters/5/images/1/src}" alt="{path: 'casestudy>/chapters/5/images/1/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/5/images/1/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                        </VBox>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{path: 'casestudy>/chapters/6/title', formatter: 'formatter.formatLocalized'}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <VBox>
+                            <Text text="{path: 'casestudy>/chapters/6/text', formatter: 'formatter.formatLocalized'}" class="sapUiSmallMarginBottom" />
+                            <Image src="{casestudy>/chapters/6/images/0/src}" alt="{path: 'casestudy>/chapters/6/images/0/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/6/images/0/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                        </VBox>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{path: 'casestudy>/chapters/7/title', formatter: 'formatter.formatLocalized'}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <VBox>
+                            <Text text="{path: 'casestudy>/chapters/7/text', formatter: 'formatter.formatLocalized'}" class="sapUiSmallMarginBottom" />
+                            <Image src="{casestudy>/chapters/7/images/0/src}" alt="{path: 'casestudy>/chapters/7/images/0/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/7/images/0/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                            <Image src="{casestudy>/chapters/7/images/1/src}" alt="{path: 'casestudy>/chapters/7/images/1/alt', formatter: 'formatter.formatLocalized'}" width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom caseStudyImage" />
+                            <Label text="{path: 'casestudy>/chapters/7/images/1/caption', formatter: 'formatter.formatLocalized'}" wrapping="true" />
+                        </VBox>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>

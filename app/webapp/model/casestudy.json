@@ -1,0 +1,280 @@
+{
+    "title": {
+        "de": "So wurde diese Website gebaut",
+        "en": "How This Site Was Built"
+    },
+    "subtitle": {
+        "de": "AI-assisted Development mit Claude Code -- eine dokumentierte Session",
+        "en": "AI-assisted Development with Claude Code -- a documented session"
+    },
+    "stats": [
+        {
+            "value": {
+                "de": "2,5h",
+                "en": "2.5h"
+            },
+            "label": {
+                "de": "Implementierung",
+                "en": "Implementation"
+            }
+        },
+        {
+            "value": "21",
+            "label": {
+                "de": "Workpackages",
+                "en": "Workpackages"
+            }
+        },
+        {
+            "value": "10",
+            "label": {
+                "de": "AI-Agenten",
+                "en": "AI Agents"
+            }
+        },
+        {
+            "value": "11k",
+            "label": {
+                "de": "Zeilen Code",
+                "en": "Lines of Code"
+            }
+        }
+    ],
+    "chapters": [
+        {
+            "id": "hook",
+            "title": {
+                "de": "2,5 Stunden statt 4-5 Wochen",
+                "en": "2.5 Hours Instead of 4-5 Weeks"
+            },
+            "text": {
+                "de": "Das PRD schätzte 4-5 Wochen für die Umsetzung. Die reine Implementierung dauerte 63 Minuten. Mit Planung, Tests, Deployment und Post-Launch-Fixes waren es insgesamt 5 Stunden -- an einem Abend. 21 Workpackages, 34 Dateien, 10 spezialisierte AI-Agenten, 10.834 Zeilen Code.",
+                "en": "The PRD estimated 4-5 weeks for the build. Actual implementation took 63 minutes. Including planning, testing, deployment and post-launch fixes, the total was 5 hours -- in a single evening session. 21 workpackages, 34 files, 10 specialized AI agents, 10,834 lines of code."
+            },
+            "images": []
+        },
+        {
+            "id": "preparation",
+            "title": {
+                "de": "Ausgangslage",
+                "en": "Starting Point"
+            },
+            "text": {
+                "de": "Der Content wurde in einer Cowork-Session vorbereitet: Projektbeschreibungen, Skills-Daten, Toolkit-Texte -- alles als strukturierte JSON-Dateien. Ein PRD (v2.1, 997 Zeilen) definierte Architektur, MVC-Regeln und Agenten-Zuordnung. Die Basis für den Build war gelegt.",
+                "en": "All content was prepared in a cowork session: project descriptions, skills data, toolkit texts -- structured as JSON files. A PRD (v2.1, 997 lines) defined the architecture, MVC rules and agent assignments. The foundation for the build was in place."
+            },
+            "images": [
+                {
+                    "src": "assets/case-study/01-cowork-content.webp",
+                    "alt": {
+                        "de": "Content-Vorbereitung in der Cowork-Session",
+                        "en": "Content preparation in the Cowork session"
+                    },
+                    "caption": {
+                        "de": "Alle Content-Dateien wurden in einer Cowork-Session verifiziert und finalisiert.",
+                        "en": "All content files were verified and finalized in a cowork session."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "planning",
+            "title": {
+                "de": "Planung",
+                "en": "Planning"
+            },
+            "text": {
+                "de": "Vor der ersten Zeile Code: offene Fragen geklärt. Calendly-URL, Portrait-Foto, SAPUI5-Version (1.136 LTS statt 1.460), Theme-Entscheidung (Standard Fiori statt Custom). Ein Project-Planner-Agent zerlegte das PRD dann in 21 Workpackages, verteilt auf 6 Ausführungswellen mit klaren Abhängigkeiten.",
+                "en": "Before the first line of code: open questions resolved. Calendly URL, portrait photo, SAPUI5 version (1.136 LTS instead of 1.460), theme decision (standard Fiori instead of custom). A Project Planner agent then decomposed the PRD into 21 workpackages across 6 execution waves with clear dependencies."
+            },
+            "images": [
+                {
+                    "src": "assets/case-study/02-decisions.webp",
+                    "alt": {
+                        "de": "Klärung offener Entscheidungen vor Implementierung",
+                        "en": "Resolving open decisions before implementation"
+                    },
+                    "caption": {
+                        "de": "Offene Punkte geklärt: Calendly, Foto, Version, Theme -- bevor die Implementierung startet.",
+                        "en": "Open items resolved: Calendly, photo, version, theme -- before implementation starts."
+                    }
+                },
+                {
+                    "src": "assets/case-study/03-workpackages.webp",
+                    "alt": {
+                        "de": "Workpackage-Plan: 21 Pakete in 6 Ausführungswellen",
+                        "en": "Workpackage plan: 21 packages across 6 execution waves"
+                    },
+                    "caption": {
+                        "de": "21 Workpackages in 6 Wellen -- jedes mit zugewiesenem Agenten und Abhängigkeiten.",
+                        "en": "21 workpackages in 6 waves -- each with an assigned agent and dependencies."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "implementation",
+            "title": {
+                "de": "Implementierung",
+                "en": "Implementation"
+            },
+            "text": {
+                "de": "6 Wellen, bis zu 7 Agenten parallel. Welle 1: App-Skeleton und Git-Setup (10 Minuten). Welle 4: sieben Features gleichzeitig -- Hero, Skills-Matrix, Projekterfahrung, Toolkit, Built-with-AI, Kontakt und Footer. 63 Minuten für alle 21 Workpackages, vom ersten Commit bis zum letzten Quality Gate.",
+                "en": "6 waves, up to 7 agents in parallel. Wave 1: app skeleton and git setup (10 minutes). Wave 4: seven features simultaneously -- hero, skills matrix, project experience, toolkit, built-with-AI, contact and footer. 63 minutes for all 21 workpackages, from first commit to last quality gate."
+            },
+            "images": [
+                {
+                    "src": "assets/case-study/04-wave-plan.webp",
+                    "alt": {
+                        "de": "Ausführungswellen mit parallelen und sequenziellen Agenten",
+                        "en": "Execution waves with parallel and sequential agents"
+                    },
+                    "caption": {
+                        "de": "Welle 4: sieben Agenten arbeiten gleichzeitig an verschiedenen Features.",
+                        "en": "Wave 4: seven agents working simultaneously on different features."
+                    }
+                },
+                {
+                    "src": "assets/case-study/05-parallel-agents.webp",
+                    "alt": {
+                        "de": "Vier AI-Agenten arbeiten parallel an Infrastruktur-Aufgaben",
+                        "en": "Four AI agents working in parallel on infrastructure tasks"
+                    },
+                    "caption": {
+                        "de": "Parallele Ausführung: jeder Agent bearbeitet sein Workpackage unabhängig.",
+                        "en": "Parallel execution: each agent handles its workpackage independently."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "quality",
+            "title": {
+                "de": "Qualitätssicherung",
+                "en": "Quality Assurance"
+            },
+            "text": {
+                "de": "11 End-to-End-Tests, ein Code Review (3 Major Findings gefixt), ein Accessibility Audit (7 Fixes für WCAG AA). UI5 Linter: 0 Errors, 0 Warnings. Erster Testlauf: 8 von 8 fehlgeschlagen. Sechs Runtime-Bugs identifiziert und behoben -- darunter deprecated manifest.json-Attribute und ein i18n-Fallback-Problem. Zweiter Testlauf: 11 von 11 bestanden.",
+                "en": "11 end-to-end tests, a code review (3 major findings fixed), an accessibility audit (7 fixes for WCAG AA). UI5 Linter: 0 errors, 0 warnings. First test run: 8 out of 8 failed. Six runtime bugs identified and fixed -- including deprecated manifest.json attributes and an i18n fallback issue. Second test run: 11 out of 11 passed."
+            },
+            "images": [
+                {
+                    "src": "assets/case-study/06-e2e-testplan.webp",
+                    "alt": {
+                        "de": "End-to-End-Testplan für alle Seiten und Funktionen",
+                        "en": "End-to-end test plan covering all pages and features"
+                    },
+                    "caption": {
+                        "de": "Strukturierter Testplan: 11 Tests für SAPUI5-App, Landing Pages und Legal-Seiten.",
+                        "en": "Structured test plan: 11 tests for the SAPUI5 app, landing pages and legal pages."
+                    }
+                },
+                {
+                    "src": "assets/case-study/10-app-live.webp",
+                    "alt": {
+                        "de": "Vollständige SAPUI5-App mit Skills-Matrix und Projektliste",
+                        "en": "Complete SAPUI5 app with skills matrix and project list"
+                    },
+                    "caption": {
+                        "de": "Die fertige App nach allen Bugfixes: Skills-Tabelle, Projekterfahrung, Toolkit.",
+                        "en": "The finished app after all bug fixes: skills table, project experience, toolkit."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "debugging",
+            "title": {
+                "de": "Problem-Lösung",
+                "en": "Problem Solving"
+            },
+            "text": {
+                "de": "Drei Probleme forderten iteratives Debugging. Die ShellBar war in sap_fiori_3 unsichtbar (weiss auf weiss) -- nach 6 Versuchen gelöst durch Wechsel von Content zu customHeader. sap_horizon war mit SAPUI5 1.136 inkompatibel -- zurück auf sap_fiori_3. Der Sprachwechsler verlor die Auswahl nach Reload -- gelöst durch URL-Parameter statt In-Memory-State.",
+                "en": "Three issues required iterative debugging. The ShellBar was invisible in sap_fiori_3 (white on white) -- resolved after 6 attempts by switching from content to customHeader. sap_horizon was incompatible with SAPUI5 1.136 -- reverted to sap_fiori_3. The language switcher lost its selection after reload -- fixed by using URL parameters instead of in-memory state."
+            },
+            "images": [
+                {
+                    "src": "assets/case-study/08-shellbar-debug.webp",
+                    "alt": {
+                        "de": "Analyse des ShellBar-Rendering-Problems in sap_fiori_3",
+                        "en": "Analyzing the ShellBar rendering issue in sap_fiori_3"
+                    },
+                    "caption": {
+                        "de": "ShellBar-Debugging: DOM-Analyse und 6 Iterationen bis zur strukturellen Lösung.",
+                        "en": "ShellBar debugging: DOM analysis and 6 iterations to reach a structural solution."
+                    }
+                },
+                {
+                    "src": "assets/case-study/09-language-bugfix.webp",
+                    "alt": {
+                        "de": "Iterative Lösung des Sprachwechsler-Bugs",
+                        "en": "Iterative fix for the language switcher bug"
+                    },
+                    "caption": {
+                        "de": "Sprachwechsel-Bug: von Select-Dropdown über Button-Pattern bis URL-Parameter.",
+                        "en": "Language switch bug: from select dropdown to button pattern to URL parameters."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "golive",
+            "title": {
+                "de": "Go-Live",
+                "en": "Go-Live"
+            },
+            "text": {
+                "de": "Build via @ui5/cli, Deploy via SFTP zu IONOS. 44 Dateien, 604 KB. Sofort ein Berechtigungsproblem: JSON-Dateien hatten 600 statt 644 -- 403 Forbidden. Fix: chmod nach jedem Deploy. Cache-Control per .htaccess (max-age 300 Sekunden). Der SAP Application Cache Buster war nicht kompatibel mit statischem Hosting.",
+                "en": "Build via @ui5/cli, deploy via SFTP to IONOS. 44 files, 604 KB. Immediately hit a permissions issue: JSON files had 600 instead of 644 -- 403 Forbidden. Fix: chmod after every deploy. Cache-Control via .htaccess (max-age 300 seconds). The SAP Application Cache Buster was not compatible with static hosting."
+            },
+            "images": [
+                {
+                    "src": "assets/case-study/12-deployment.webp",
+                    "alt": {
+                        "de": "Deployment-Übersicht und Phasen-Roadmap",
+                        "en": "Deployment overview and phase roadmap"
+                    },
+                    "caption": {
+                        "de": "Deployment zu IONOS: 44 Dateien, ein Berechtigungsfix, Cache-Control konfiguriert.",
+                        "en": "Deployment to IONOS: 44 files, one permissions fix, cache control configured."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "result",
+            "title": {
+                "de": "Ergebnis",
+                "en": "Result"
+            },
+            "text": {
+                "de": "63 Minuten reine Implementierung. 90 Minuten Post-Launch-Fixes (ShellBar, Theme, Sprache, Cache). 45 Minuten Content-Extraktion in Templates. AI schreibt nicht magisch perfekten Code -- aber mit dem richtigen Workflow wird es ein massiv beschleunigter, qualitätsgesicherter Prozess. Die gesamte Session ist als Open-Source-Projekt auf GitHub dokumentiert.",
+                "en": "63 minutes of pure implementation. 90 minutes of post-launch fixes (ShellBar, theme, language, cache). 45 minutes of content extraction into templates. AI does not magically write perfect code -- but with the right workflow it becomes a massively accelerated, quality-assured process. The entire session is documented as an open-source project on GitHub."
+            },
+            "images": [
+                {
+                    "src": "assets/case-study/11-timeline.webp",
+                    "alt": {
+                        "de": "Implementierungs-Timeline: 63 Minuten für die komplette App",
+                        "en": "Implementation timeline: 63 minutes for the complete app"
+                    },
+                    "caption": {
+                        "de": "Zeittabelle: jede Phase mit Dauer -- von der Planung bis zum Content-Update.",
+                        "en": "Timeline table: each phase with duration -- from planning to content update."
+                    }
+                },
+                {
+                    "src": "assets/case-study/13-goodnight.webp",
+                    "alt": {
+                        "de": "Session-Abschluss: Log geschrieben, Kontext gespeichert",
+                        "en": "Session wrap-up: log written, context saved"
+                    },
+                    "caption": {
+                        "de": "Session-Ende um 00:45 Uhr: Log geschrieben, Memory gespeichert, 19 Commits.",
+                        "en": "Session end at 00:45: log written, memory saved, 19 commits."
+                    }
+                }
+            ]
+        }
+    ]
+}
