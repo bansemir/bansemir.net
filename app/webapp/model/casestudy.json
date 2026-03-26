@@ -10,8 +10,8 @@
     "stats": [
         {
             "value": {
-                "de": "2,5h",
-                "en": "2.5h"
+                "de": "63min",
+                "en": "63min"
             },
             "label": {
                 "de": "Implementierung",
@@ -26,7 +26,7 @@
             }
         },
         {
-            "value": "10",
+            "value": "9",
             "label": {
                 "de": "AI-Agenten",
                 "en": "AI Agents"
@@ -44,12 +44,12 @@
         {
             "id": "hook",
             "title": {
-                "de": "2,5 Stunden statt 4-5 Wochen",
-                "en": "2.5 Hours Instead of 4-5 Weeks"
+                "de": "63 Minuten statt 4-5 Wochen",
+                "en": "63 Minutes Instead of 4-5 Weeks"
             },
             "text": {
-                "de": "Das PRD schätzte 4-5 Wochen für die Umsetzung. Die reine Implementierung dauerte 63 Minuten. Mit Planung, Tests, Deployment und Post-Launch-Fixes waren es insgesamt 5 Stunden -- an einem Abend. 21 Workpackages, 34 Dateien, 10 spezialisierte AI-Agenten, 10.834 Zeilen Code.",
-                "en": "The PRD estimated 4-5 weeks for the build. Actual implementation took 63 minutes. Including planning, testing, deployment and post-launch fixes, the total was 5 hours -- in a single evening session. 21 workpackages, 34 files, 10 specialized AI agents, 10,834 lines of code."
+                "de": "Das PRD schätzte 4-5 Wochen für die Umsetzung. Die reine Implementierung dauerte 63 Minuten. Mit Planung, Tests, Deployment und Post-Launch-Fixes waren es insgesamt 5 Stunden -- an einem Abend. 21 Workpackages, 30 Dateien, 9 spezialisierte AI-Agenten, 10.834 Zeilen Code.",
+                "en": "The PRD estimated 4-5 weeks for the build. Actual implementation took 63 minutes. Including planning, testing, deployment and post-launch fixes, the total was 5 hours -- in a single evening session. 21 workpackages, 30 files, 9 specialized AI agents, 10,834 lines of code."
             },
             "images": []
         },
