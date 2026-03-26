@@ -6,10 +6,11 @@
 - ✅ Zahlenkorrektur in `content/casestudy-en.json` (metaDescription + ogDescription)
 - ✅ Zahlenkorrektur in `Overview.view.xml` builtWith-Section (63min, 9)
 - ✅ PRD-Link in Chapter 2 "Ausgangslage" (casestudy-de.json, casestudy-en.json, casestudy.json)
-- ⬜ Änderung 1: Ghost-Button im Header
-- ⬜ Änderung 2: Neue Section "Case Study Teaser"
-- ⬜ Änderung 3: HTML Case Study Pages neu generieren (PFLICHT — Content-JSONs wurden geändert)
-- ⬜ UI5 Linter: 0 errors, 0 warnings
+- ✅ Änderung 1: Ghost-Button im Header
+- ✅ Änderung 2: Neue Section "Case Study Teaser"
+- ✅ Änderung 3: CaseStudy.view.xml — Chapter 2 Text→FormattedText (PRD-Link klickbar machen)
+- ✅ Änderung 4: HTML Case Study Pages neu generieren
+- ⬜ UI5 Linter: 0 errors, 0 warnings (noch zu prüfen)
 
 ## Verbindliche Zahlen (aus SESSION-LOG-2026-03-25.md)
 
@@ -116,7 +117,29 @@ caseStudy.readMore=Read Full Case Study
 
 ---
 
-## Änderung 3: Statische HTML Case Study Pages neu generieren
+## Änderung 3: CaseStudy.view.xml — Text→FormattedText für Chapter 2
+
+**Problem:** `casestudy.json` Chapter 2 ("Ausgangslage") enthält jetzt einen HTML-Link zum PRD auf GitHub. Die CaseStudy View verwendet aber `<Text>`, das HTML nicht rendert.
+
+**Datei:** `app/webapp/view/CaseStudy.view.xml` (Zeile 68)
+
+**Aktuell:**
+```xml
+<Text text="{path: 'casestudy>/chapters/1/text', formatter: 'formatter.formatLocalized'}" class="sapUiSmallMarginBottom" />
+```
+
+**Neu:**
+```xml
+<FormattedText htmlText="{path: 'casestudy>/chapters/1/text', formatter: 'formatter.formatLocalized'}" class="sapUiSmallMarginBottom" />
+```
+
+**Hinweis:** Nur Chapter 2 (Index 1) umstellen — die anderen Chapters enthalten kein HTML und können `Text` bleiben. `FormattedText` rendert `<a>` Tags korrekt mit `target="_blank"`.
+
+**Verifizierung:** In der SAPUI5-App unter `#/case-study` muss im Abschnitt "Ausgangslage" der Text "PRD (v2.1, 997 Zeilen)" als klickbarer Link zu GitHub erscheinen.
+
+---
+
+## Änderung 4: Statische HTML Case Study Pages neu generieren
 
 Die Content-JSONs (`content/casestudy-de.json` und `content/casestudy-en.json`) sind bereits korrigiert. Die generierten HTML-Dateien müssen noch aktualisiert werden:
 
