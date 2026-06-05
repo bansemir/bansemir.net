@@ -16,9 +16,9 @@ This site was built in a single evening session — from PRD to production — u
 | Workpackages | 21, across 6 execution waves |
 | AI agents | 9 specialized (SAP frontend, fullstack, QA, a11y) |
 | Max parallel agents | 7 (Wave 4) |
-| Lines of code | 10,834 |
+| Lines of code | ~4,000 authored (+ ~6,800 `package-lock.json`); 10,834 insertions total in the main commit |
 | Files in main commit | 30 |
-| Commits | 19 |
+| Commits | 19 in the initial build session |
 | UI5 Linter violations | 0 errors, 0 warnings |
 
 The full build process is documented as a [Case Study](https://bansemir.net/case-study/) with 13 screenshots showing every phase. The [PRD](docs/PRD.md) that started it all is in this repo.
@@ -32,7 +32,7 @@ The medium is the message. Instead of listing SAP skills on a generic template, 
 
 **For SAP project leads:** This is what structured AI-assisted development looks like in practice — not a prototype, but a production site with proper quality gates.
 
-**For developers:** Every commit documents which agent implemented the change and which agents reviewed it. Check the git log.
+**For developers:** The main feature commits document which agent implemented the change and which agents reviewed it (via Co-Authored-By trailers). Check the git log.
 
 
 ## Tech Stack
@@ -42,7 +42,7 @@ The medium is the message. Instead of listing SAP skills on a generic template, 
 | Framework | SAPUI5 1.136 LTS (from SAP CDN) |
 | Language | JavaScript ES6+ (`sap.ui.define` modules) |
 | Tooling | @ui5/cli 4.x, ui5-middleware-livereload |
-| Theme | sap_fiori_3 |
+| Theme | sap_horizon (light/dark) |
 | Hosting | IONOS (static files) |
 | Analytics | Plausible (GDPR-compliant, no cookie banner) |
 | Booking | Calendly (embedded) |
@@ -117,6 +117,32 @@ PRD (997 lines)
 | Code Quality | No deprecated APIs, no AI slop | Linted |
 
 
+## Running from a Clone
+
+The real `config.json` and `content/*.json` files hold personal data (name, email,
+contact links) and are intentionally gitignored. The repo ships sanitized
+`*.example.json` files instead, so a fresh clone still runs. Copy them once and
+fill in your own data:
+
+```bash
+cp app/webapp/model/config.example.json app/webapp/model/config.json
+cp content/landing-de.example.json     content/landing-de.json
+cp content/landing-en.example.json     content/landing-en.json
+cp content/casestudy-de.example.json   content/casestudy-de.json
+cp content/casestudy-en.example.json   content/casestudy-en.json
+```
+
+The SAPUI5 app reads `app/webapp/model/config.json` directly. The static landing
+and case-study pages are generated from `content/*.json` via:
+
+```bash
+node app/scripts/build-html.js
+```
+
+`build-html.js` fails fast with a clear message if any of these files are missing,
+pointing you to the matching `.example.json` to copy.
+
+
 ## Local Development
 
 ```bash
@@ -131,11 +157,23 @@ The dev server starts with livereload. The SAPUI5 framework loads from SAP CDN �
 ## Production Build
 
 ```bash
-cd app
-npx ui5 build --all --dest ../dist/app
+./build-deploy.sh           # full bundle: lint gate → static pages → ui5 build → dist/deploy/
+./build-deploy.sh --serve   # same, then preview on http://localhost:8090/
 ```
 
-Produces optimized, preload-bundled output in `dist/app/`. The landing pages and static assets are deployed separately alongside the built app.
+Runs the ui5lint quality gate, regenerates the static pages from templates, builds the UI5 app (preload bundle + cachebuster), and assembles the complete upload-ready site in `dist/deploy/`.
+
+To build only the UI5 app: `cd app && npm run build` (output in `dist/app/`).
+
+## Deployment (IONOS)
+
+```bash
+./deploy-ionos.sh --dry-run   # preview what would be uploaded
+./deploy-ionos.sh             # confirm → incremental SFTP upload → live-site verification
+./deploy-ionos.sh --build     # rebuild everything first, then deploy
+```
+
+Credentials live in `.env` (gitignored — see `.env.example`). The script normalizes file permissions to 644/755 before upload (600 JSONs once caused 403s), only transfers changed files (lftp mirror), and verifies the live site afterwards (landing page, app bootstrap, JSON model readability, security headers). `--delete` additionally removes remote files that no longer exist locally.
 
 
 ## Project Data
