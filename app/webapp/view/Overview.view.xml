@@ -66,17 +66,17 @@
                                 </GenericTile>
                                 <GenericTile header="{i18n>builtWith.statsWorkpackages}" frameType="OneByOne">
                                     <TileContent>
-                                        <NumericContent value="21" withMargin="false" />
+                                        <NumericContent value="{path: 'casestudy>/stats/1/value', formatter: '.formatter.formatLocalized'}" withMargin="false" />
                                     </TileContent>
                                 </GenericTile>
                                 <GenericTile header="{i18n>builtWith.statsAgents}" frameType="OneByOne">
                                     <TileContent>
-                                        <NumericContent value="9" withMargin="false" />
+                                        <NumericContent value="{path: 'casestudy>/stats/2/value', formatter: '.formatter.formatLocalized'}" withMargin="false" />
                                     </TileContent>
                                 </GenericTile>
                                 <GenericTile header="{i18n>builtWith.statsLines}" frameType="OneByOne">
                                     <TileContent>
-                                        <NumericContent value="11k" withMargin="false" />
+                                        <NumericContent value="{path: 'casestudy>/stats/3/value', formatter: '.formatter.formatLocalized'}" withMargin="false" />
                                     </TileContent>
                                 </GenericTile>
                             </HBox>
@@ -173,7 +173,7 @@
                                                     <Link text="{i18n>contact.linkedin}" href="{config>/social/linkedin}" target="_blank" />
                                                 </form:fields>
                                             </form:FormElement>
-                                            <form:FormElement label="GULP">
+                                            <form:FormElement label="{i18n>contact.gulpLabel}">
                                                 <form:fields>
                                                     <Link text="{i18n>contact.gulp}" href="{config>/social/gulp}" target="_blank" />
                                                 </form:fields>

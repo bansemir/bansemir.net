@@ -24,6 +24,10 @@ sap.ui.define([
                     path: "/projects/" + iIndex,
                     model: "projects"
                 });
+            } else {
+                // Unknown / deep-linked project id: show a friendly not-found page
+                // instead of an empty, unbound view.
+                this.getRouter().getTargets().display("notFound");
             }
         }
     });

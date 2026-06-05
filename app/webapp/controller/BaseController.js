@@ -15,14 +15,6 @@ sap.ui.define([
             return this.getView().getModel(sName);
         },
 
-        setModel: function (oModel, sName) {
-            this.getView().setModel(oModel, sName);
-        },
-
-        getResourceBundle: function () {
-            return this.getOwnerComponent().getModel("i18n").getResourceBundle();
-        },
-
         navTo: function (sRoute, oParams) {
             this.getRouter().navTo(sRoute, oParams);
         },
@@ -32,25 +24,15 @@ sap.ui.define([
             if (sPreviousHash !== undefined) {
                 window.history.go(-1);
             } else {
-                this.navTo("overview", {});
+                // No in-app history (e.g. deep link / fresh load): route to the
+                // overview and replace the current hash so Back doesn't loop.
+                this.getRouter().navTo("overview", {}, undefined, true);
             }
         },
 
         getLocale: function () {
             var sLanguage = Localization.getLanguage();
             return sLanguage.startsWith("en") ? "en" : "de";
-        },
-
-        getLocalizedText: function (oData, sField) {
-            if (!oData || !oData[sField]) {
-                return "";
-            }
-            var vValue = oData[sField];
-            if (typeof vValue === "string") {
-                return vValue;
-            }
-            var sLocale = this.getLocale();
-            return vValue[sLocale] || vValue.de || "";
         }
     });
 });

@@ -1,52 +1,47 @@
 <core:FragmentDefinition
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
-    xmlns:table="sap.ui.table"
-    xmlns:rowmodes="sap.ui.table.rowmodes">
+    core:require="{ formatter: 'net/bansemir/profile/model/formatter' }">
 
-    <table:Table
+    <Table
         id="skillsTable"
-        rows="{skillsFlat>/}"
-        selectionMode="None">
-        <table:rowMode>
-            <rowmodes:Auto minRowCount="5" maxRowCount="15" />
-        </table:rowMode>
-        <table:extension>
+        items="{skillsFlat>/}"
+        growing="true"
+        growingThreshold="20">
+        <headerToolbar>
             <OverflowToolbar>
                 <Title text="{i18n>skills.heading}" />
                 <ToolbarSpacer />
-                <SearchField width="15rem" search=".onSkillSearch" />
+                <SearchField width="15rem" search=".onSkillSearch" liveChange=".onSkillSearch" />
             </OverflowToolbar>
-        </table:extension>
-        <table:columns>
-            <table:Column minWidth="150" sortProperty="name" filterProperty="name">
-                <Label text="{i18n>skills.skill}" />
-                <table:template>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Text text="{i18n>skills.skill}" />
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+                <Text text="{i18n>skills.category}" />
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+                <Text text="{i18n>skills.experience}" />
+            </Column>
+            <Column minScreenWidth="Phone" demandPopin="true">
+                <Text text="{i18n>skills.level}" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
                     <Text text="{skillsFlat>name}" />
-                </table:template>
-            </table:Column>
-            <table:Column minWidth="120" sortProperty="category" filterProperty="category">
-                <Label text="{i18n>skills.category}" />
-                <table:template>
                     <Text text="{skillsFlat>category}" />
-                </table:template>
-            </table:Column>
-            <table:Column minWidth="100" sortProperty="years">
-                <Label text="{i18n>skills.experience}" />
-                <table:template>
                     <ObjectNumber
                         number="{skillsFlat>years}"
                         unit="{i18n>skills.years}" />
-                </table:template>
-            </table:Column>
-            <table:Column minWidth="100" sortProperty="level">
-                <Label text="{i18n>skills.level}" />
-                <table:template>
                     <ObjectStatus
                         text="{= ${skillsFlat>level} === 'expert' ? ${i18n>skills.level.expert} : (${skillsFlat>level} === 'advanced' ? ${i18n>skills.level.advanced} : ${i18n>skills.level.intermediate})}"
-                        state="{path: 'skillsFlat>level', formatter: '.formatter.formatLevelState'}" />
-                </table:template>
-            </table:Column>
-        </table:columns>
-    </table:Table>
+                        state="{path: 'skillsFlat>level', formatter: 'formatter.formatLevelState'}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
 </core:FragmentDefinition>

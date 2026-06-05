@@ -27,19 +27,12 @@ sap.ui.define([
             if (!oSkillsModel) {
                 return;
             }
-            var aCategories = oSkillsModel.getProperty("/categories");
-            if (aCategories) {
+            // dataLoaded() resolves immediately if the model is already loaded,
+            // otherwise once the JSON request completes -- the correct API instead
+            // of an attachEventOnce + setTimeout(3000) readiness race.
+            oSkillsModel.dataLoaded().then(function () {
                 this._buildFlatSkills(oSkillsModel);
-            } else {
-                oSkillsModel.attachEventOnce("requestCompleted", function () {
-                    this._buildFlatSkills(oSkillsModel);
-                }.bind(this));
-                setTimeout(function () {
-                    if (!this.getView().getModel("skillsFlat")) {
-                        this._buildFlatSkills(oSkillsModel);
-                    }
-                }.bind(this), 3000);
-            }
+            }.bind(this));
         },
 
         _buildFlatSkills: function (oSkillsModel) {
@@ -61,14 +54,30 @@ sap.ui.define([
                     });
                 });
             });
-            this.getView().setModel(new JSONModel(aFlat), "skillsFlat");
+            // Reuse the model on re-entry so we never orphan a previous instance.
+            var oFlatModel = this.getView().getModel("skillsFlat");
+            if (oFlatModel) {
+                oFlatModel.setData(aFlat);
+            } else {
+                this._oSkillsFlatModel = new JSONModel(aFlat);
+                this.getView().setModel(this._oSkillsFlatModel, "skillsFlat");
+            }
+        },
+
+        onExit: function () {
+            // The skillsFlat model is created in the controller (not via manifest),
+            // so the controller owns its lifecycle and must clean it up.
+            if (this._oSkillsFlatModel) {
+                this._oSkillsFlatModel.destroy();
+                this._oSkillsFlatModel = null;
+            }
         },
 
         onSkillSearch: function (oEvent) {
             var sQuery = oEvent.getParameter("query") ||
                 oEvent.getParameter("newValue") || "";
             var oTable = this.byId("skillsTable");
-            var oBinding = oTable.getBinding("rows");
+            var oBinding = oTable.getBinding("items");
             if (oBinding) {
                 var aFilters = sQuery
                     ? [new Filter("name", FilterOperator.Contains, sQuery)]
@@ -79,7 +88,10 @@ sap.ui.define([
 
         onNavToProject: function (oEvent) {
             var oContext = oEvent.getSource().getBindingContext("projects");
-            var sProjectId = oContext.getProperty("id");
+            var sProjectId = oContext && oContext.getProperty("id");
+            if (!sProjectId) {
+                return;
+            }
             this.navTo("projectDetail", { projectId: sProjectId });
         },
 
