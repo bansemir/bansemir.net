@@ -5,7 +5,8 @@ sap.ui.define([
 
     return UIComponent.extend("net.bansemir.profile.Component", {
         metadata: {
-            manifest: "json"
+            manifest: "json",
+            interfaces: ["sap.ui.core.IAsyncContentCreation"]
         },
 
         init: function () {

@@ -1,0 +1,21 @@
+<mvc:View
+    controllerName="net.bansemir.profile.controller.NotFound"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page
+        title="{i18n>notFound.title}"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+        <IllustratedMessage
+            illustrationType="sapIllus-PageNotFound"
+            title="{i18n>notFound.title}"
+            description="{i18n>notFound.text}">
+            <additionalContent>
+                <Button
+                    text="{i18n>notFound.backToOverview}"
+                    type="Emphasized"
+                    press=".onNavToOverview" />
+            </additionalContent>
+        </IllustratedMessage>
+    </Page>
+</mvc:View>
