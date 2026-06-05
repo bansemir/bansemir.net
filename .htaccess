@@ -1,0 +1,19 @@
+# bansemir.net — Apache configuration (IONOS shared hosting)
+#
+# Security headers + root redirect. The Content-Security-Policy is intentionally
+# strict: scripts/styles/fonts come only from 'self' and the SAPUI5 CDN
+# (ui5.sap.com), analytics from Plausible (plausible.io). Calendly is opened as a
+# normal link in a new tab and is never framed, so it is deliberately NOT listed
+# in frame-src. UI5 injects styles at runtime, so style-src needs 'unsafe-inline'.
+
+# --- 301 redirect bare root to the German landing page --------------------------
+RewriteEngine On
+RewriteRule ^$ /de/ [R=301,L]
+
+# --- Security headers -----------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://ui5.sap.com https://plausible.io; style-src 'self' 'unsafe-inline' https://ui5.sap.com; font-src 'self' https://ui5.sap.com; img-src 'self' data:; connect-src 'self' https://ui5.sap.com https://plausible.io; frame-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
