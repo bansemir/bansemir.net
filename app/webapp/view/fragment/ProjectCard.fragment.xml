@@ -12,7 +12,7 @@
         </headerToolbar>
         <ObjectListItem
             title="{path: 'projects>role', formatter: 'formatter.formatLocalized'}"
-            number="{projects>period}"
+            number="{path: 'projects>period', formatter: 'formatter.formatLocalized'}"
             type="Navigation"
             press=".onNavToProject">
             <attributes>

@@ -16,7 +16,7 @@
             responsive="true"
             fullScreenOptimized="true"
             title="{path: 'projects>role', formatter: 'formatter.formatLocalized'}"
-            number="{projects>period}">
+            number="{path: 'projects>period', formatter: 'formatter.formatLocalized'}">
             <attributes>
                 <ObjectAttribute
                     title="{i18n>projects.client}"
