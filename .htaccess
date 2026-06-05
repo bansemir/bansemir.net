@@ -6,8 +6,14 @@
 # normal link in a new tab and is never framed, so it is deliberately NOT listed
 # in frame-src. UI5 injects styles at runtime, so style-src needs 'unsafe-inline'.
 
-# --- 301 redirect bare root to the German landing page --------------------------
+# --- HTTPS enforcement -----------------------------------------------------------
+# The 301s below would otherwise keep first-time HTTP visitors on plain HTTP
+# (HSTS only protects returning visitors).
 RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# --- 301 redirect bare root to the German landing page --------------------------
 RewriteRule ^$ /de/ [R=301,L]
 
 # --- Security headers -----------------------------------------------------------
@@ -16,4 +22,25 @@ RewriteRule ^$ /de/ [R=301,L]
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Strict-Transport-Security "max-age=31536000"
+
+    # --- Caching ----------------------------------------------------------------
+    # HTML must always revalidate (ETag makes this cheap). Without an explicit
+    # Cache-Control, browsers apply heuristic freshness based on Last-Modified
+    # and can serve week-old pages after a deployment.
+    <FilesMatch "\.html$">
+        Header always set Cache-Control "no-cache"
+    </FilesMatch>
+    # Images and fonts change rarely — cache for a day.
+    <FilesMatch "\.(png|jpg|jpeg|webp|svg|ico|woff2?)$">
+        Header always set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+    # Code and data: short cache so deployments propagate within minutes.
+    <FilesMatch "\.(js|css|json|properties|xml)$">
+        Header always set Cache-Control "public, max-age=300"
+    </FilesMatch>
+</IfModule>
+
+# --- MIME types ------------------------------------------------------------------
+<IfModule mod_mime.c>
+    AddType text/plain .properties
 </IfModule>
