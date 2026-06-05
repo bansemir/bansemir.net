@@ -4,7 +4,10 @@ dist/
 .env
 *.log
 .ui5/
-content/
+# Ignore all real content, but keep the sanitized *.example.json files so the
+# repo runs from a fresh clone (copy them to the un-suffixed names — see README).
+content/*
+!content/*.example.json
 .claude/launch.json
 .playwright-mcp/
 app/webapp/model/config.json
@@ -12,3 +15,10 @@ de/index.html
 en/index.html
 legal/impressum.html
 legal/datenschutz.html
+# Generated case-study pages (build-html.js outputs, same as de/en/legal above)
+case-study/index.html
+case-study/en/index.html
+# Local working dirs and duplicate staging assets (app uses its own tracked copy
+# under app/webapp/assets/toolkit/)
+.claude/worktrees/
+/assets/toolkit/

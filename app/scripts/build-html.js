@@ -5,6 +5,37 @@ var fs = require("fs");
 var path = require("path");
 
 var root = path.join(__dirname, "..", "..");
+
+// Guard: the real config/content files are gitignored. On a fresh clone only the
+// *.example.json files exist. Fail early with a clear, actionable message instead
+// of an opaque ENOENT, so the showcase actually runs from a clone.
+var requiredFiles = [
+    path.join("app", "webapp", "model", "config.json"),
+    path.join("content", "landing-de.json"),
+    path.join("content", "landing-en.json"),
+    path.join("content", "casestudy-de.json"),
+    path.join("content", "casestudy-en.json")
+];
+var missing = requiredFiles.filter(function (rel) {
+    return !fs.existsSync(path.join(root, rel));
+});
+if (missing.length > 0) {
+    console.error("\nMissing required config/content files:\n");
+    missing.forEach(function (rel) {
+        var example = rel.replace(/\.json$/, ".example.json");
+        console.error("  " + rel + "  (copy from " + example + ")");
+    });
+    console.error("\nThese files are gitignored. On a fresh clone, copy the");
+    console.error("matching *.example.json file to the name above and fill in your");
+    console.error("own data, then re-run this script. For example:\n");
+    console.error("  cp app/webapp/model/config.example.json app/webapp/model/config.json");
+    console.error("  cp content/landing-de.example.json content/landing-de.json");
+    console.error("  cp content/landing-en.example.json content/landing-en.json");
+    console.error("  cp content/casestudy-de.example.json content/casestudy-de.json");
+    console.error("  cp content/casestudy-en.example.json content/casestudy-en.json\n");
+    process.exit(1);
+}
+
 var config = JSON.parse(fs.readFileSync(path.join(root, "app", "webapp", "model", "config.json"), "utf8"));
 
 var baseReplacements = {

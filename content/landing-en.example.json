@@ -1,0 +1,42 @@
+{
+  "skipLink": "Skip to content",
+  "themeToggleLabel": "Toggle theme",
+  "heroRole": "Software Architect",
+  "heroHeadline": "Example headline",
+  "heroSubline": "Short example subline for the landing page.",
+  "ctaPrimary": "Check availability",
+  "ctaPrimaryHint": "(opens new window)",
+  "ctaSecondary": "Interactive SAPUI5 profile &#8594;",
+  "statsLabel": "Key figures",
+  "stats": [
+    { "value": "10+", "label": "Years experience" },
+    { "value": "4", "label": "Industries" },
+    { "value": "50k", "label": "Lines of code" },
+    { "value": "100+", "label": "Rules" }
+  ],
+  "profileHeading": "Profile",
+  "profileLabel": "Profile summary",
+  "profileCards": [
+    {
+      "title": "Example card 1",
+      "text": "Placeholder text for the first profile card."
+    },
+    {
+      "title": "Example card 2",
+      "text": "Placeholder text for the second profile card."
+    },
+    {
+      "title": "Example card 3",
+      "text": "Placeholder text for the third profile card."
+    }
+  ],
+  "contactHeading": "Contact",
+  "contactLabel": "Contact",
+  "externalLinkHint": "(opens new window)",
+  "footerImprintLabel": "Imprint",
+  "footerPrivacyLabel": "Privacy",
+  "footerCopyright": "&copy; 2026",
+  "metaDescription": "Example meta description for the English landing page.",
+  "ogDescription": "Example Open Graph description.",
+  "twitterDescription": "Example Twitter description."
+}

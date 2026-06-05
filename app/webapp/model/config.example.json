@@ -1,0 +1,62 @@
+{
+  "site": {
+    "name": "Jane Doe",
+    "domain": "example.com",
+    "defaultLocale": "de",
+    "locales": ["de", "en"],
+    "baseUrl": "https://example.com"
+  },
+  "owner": {
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "phone": "+49 000 0000000",
+    "location": "12345 Example City, Country",
+    "languages": ["Deutsch (Muttersprache)", "Englisch (verhandlungssicher)"],
+    "availability": "sofort",
+    "availabilityPercent": 100,
+    "remotePercent": 80,
+    "onsitePercent": 20,
+    "workModel": ["Remote", "Hybrid"],
+    "regions": ["Deutschland", "Österreich", "Schweiz"],
+    "radius": "DACH-weit"
+  },
+  "education": {
+    "institution": "Example University",
+    "degree": "Diplom-Informatiker",
+    "period": "Okt 1999 – Mär 2007",
+    "major": "Mustererkennung",
+    "minor": "Künstliche Intelligenz",
+    "thesis": {
+      "de": "Beispiel-Diplomarbeitstitel",
+      "en": "Example thesis title"
+    }
+  },
+  "industries": {
+    "de": ["Versicherung", "Logistik", "Handel", "Industrie"],
+    "en": ["Insurance", "Logistics", "Retail", "Industry"]
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/jane-doe",
+    "github": "https://github.com/jane-doe/example",
+    "gulp": "https://www.gulp.de/freelancer/janedoe"
+  },
+  "services": {
+    "calendlyUrl": "https://calendly.com/jane-doe",
+    "plausibleDomain": "example.com",
+    "plausibleSrc": "https://plausible.io/js/script.js"
+  },
+  "design": {
+    "colors": {
+      "primary": "#1a365d",
+      "secondary": "#0d9488",
+      "accent": "#d97706",
+      "background": "#fafaf9",
+      "text": "#1c1917"
+    },
+    "fonts": {
+      "heading": "Inter",
+      "body": "Inter",
+      "code": "JetBrains Mono"
+    }
+  }
+}

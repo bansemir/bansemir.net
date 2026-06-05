@@ -1,0 +1,42 @@
+{
+  "skipLink": "Zum Inhalt springen",
+  "themeToggleLabel": "Design wechseln",
+  "heroRole": "Software Architect",
+  "heroHeadline": "Beispiel-Headline",
+  "heroSubline": "Kurze Beispiel-Subline für die Landing Page.",
+  "ctaPrimary": "Verfügbarkeit prüfen",
+  "ctaPrimaryHint": "(öffnet neues Fenster)",
+  "ctaSecondary": "Interaktives SAPUI5-Profil &#8594;",
+  "statsLabel": "Kernzahlen",
+  "stats": [
+    { "value": "10+", "label": "Jahre Erfahrung" },
+    { "value": "4", "label": "Branchen" },
+    { "value": "50k", "label": "Zeilen Code" },
+    { "value": "100+", "label": "Regeln" }
+  ],
+  "profileHeading": "Kurzprofil",
+  "profileLabel": "Kurzprofil",
+  "profileCards": [
+    {
+      "title": "Beispiel-Karte 1",
+      "text": "Platzhalter-Text für die erste Profil-Karte."
+    },
+    {
+      "title": "Beispiel-Karte 2",
+      "text": "Platzhalter-Text für die zweite Profil-Karte."
+    },
+    {
+      "title": "Beispiel-Karte 3",
+      "text": "Platzhalter-Text für die dritte Profil-Karte."
+    }
+  ],
+  "contactHeading": "Kontakt",
+  "contactLabel": "Kontakt",
+  "externalLinkHint": "(öffnet neues Fenster)",
+  "footerImprintLabel": "Impressum",
+  "footerPrivacyLabel": "Datenschutz",
+  "footerCopyright": "&copy; 2026",
+  "metaDescription": "Beispiel-Meta-Beschreibung für die deutsche Landing Page.",
+  "ogDescription": "Beispiel Open-Graph-Beschreibung.",
+  "twitterDescription": "Beispiel Twitter-Beschreibung."
+}
