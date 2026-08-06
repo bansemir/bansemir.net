@@ -1,21 +1,19 @@
 {
   "toolkit": {
     "name": "SAP Accelerator Toolkit",
-    "basePath": "/Library/Vibes/toolkit",
     "gitRepos": "Alle Repos im Git-Account des Owners",
-    "totalLines": 85000,
-    "totalRules": 201,
-    "totalTests": 4500,
+    "totalLines": 170000,
+    "totalRules": 250,
+    "totalTests": 5500,
     "totalDomains": 10,
     "result": {
-      "de": "30\u201350% schnellere Entwicklungszyklen bei höherer Qualität",
-      "en": "30\u201350% faster development cycles with higher quality"
+      "de": "30–50% schnellere Entwicklungszyklen bei höherer Qualität",
+      "en": "30–50% faster development cycles with higher quality"
     }
   },
   "tools": [
     {
       "id": "field-change",
-      "localPath": "/Library/Vibes/toolkit/field-change",
       "port": 9001,
       "title": {
         "de": "Field-Change-Analyse",
@@ -34,15 +32,14 @@
     },
     {
       "id": "code-review",
-      "localPath": "/Library/Vibes/toolkit/code-review",
       "port": 9002,
       "title": {
         "de": "Code Review",
         "en": "Code review"
       },
       "description": {
-        "de": "Statische Analyse mit 200+ SAP-spezifischen Prüfregeln für ABAP, CDS und Fiori.",
-        "en": "Static analysis with 200+ SAP-specific validation rules for ABAP, CDS, and Fiori."
+        "de": "Statische Analyse mit 250+ SAP-spezifischen Prüfregeln für ABAP, CDS und Fiori.",
+        "en": "Static analysis with 250+ SAP-specific validation rules for ABAP, CDS, and Fiori."
       },
       "stats": {
         "rules": 201,
@@ -54,7 +51,6 @@
     },
     {
       "id": "rap-generator",
-      "localPath": "/Library/Vibes/toolkit/rap-generator",
       "port": 9003,
       "title": {
         "de": "RAP/Fiori-Generator",
@@ -74,7 +70,6 @@
     },
     {
       "id": "ticket-analysis",
-      "localPath": "/Library/Vibes/toolkit/ticket-analysis",
       "port": 9004,
       "title": {
         "de": "Ticket-Bewertung",
@@ -92,6 +87,32 @@
         "tests": 1344,
         "lines": 20100
       }
+    },
+    {
+      "id": "joule-enablement",
+      "port": 9005,
+      "title": {
+        "de": "SAP Joule & BTP-AI Enablement",
+        "en": "SAP Joule & BTP AI enablement"
+      },
+      "description": {
+        "de": "Erzeugt aus einem Joule-Use-Case und bestehender On-Premise-Landschaft einen vollständigen Enablement-Blueprint plus Starter-Scaffolds — inklusive Alternative über SAP AI Core / Generative AI Hub bzw. ABAP AI SDK. Regelbasiert und deterministisch, kein Runtime-LLM.",
+        "en": "Turns a Joule use case and an existing on-premise landscape into a complete enablement blueprint plus starter scaffolds — including the alternative track via SAP AI Core / Generative AI Hub or the ABAP AI SDK. Rule-based and deterministic, no runtime LLM."
+      },
+      "stats": {}
+    },
+    {
+      "id": "rise-readiness",
+      "port": 9006,
+      "title": {
+        "de": "SAP Joule for RISE — Embedded Readiness",
+        "en": "SAP Joule for RISE — embedded readiness"
+      },
+      "description": {
+        "de": "Prüft eine S/4HANA-Cloud-Private-Edition-Landschaft (RISE) darauf, ob embedded Joule aktiviert werden kann: Readiness-Gap-Analyse, Aktivierungs-Runbook und ausfüllbare Aktivierungsartefakte. Regelbasiert und deterministisch, kein Runtime-LLM.",
+        "en": "Checks an S/4HANA Cloud Private Edition (RISE) landscape for embedded Joule readiness: gap analysis, activation runbook and fillable activation artifacts. Rule-based and deterministic, no runtime LLM."
+      },
+      "stats": {}
     }
   ]
 }

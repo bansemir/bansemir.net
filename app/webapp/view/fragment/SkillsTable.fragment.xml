@@ -7,7 +7,7 @@
         id="skillsTable"
         items="{skillsFlat>/}"
         growing="true"
-        growingThreshold="20">
+        growingThreshold="60">
         <headerToolbar>
             <OverflowToolbar>
                 <Title text="{i18n>skills.heading}" />
@@ -36,9 +36,9 @@
                     <Text text="{skillsFlat>category}" />
                     <ObjectNumber
                         number="{skillsFlat>years}"
-                        unit="{i18n>skills.years}" />
+                        unit="{= ${skillsFlat>years} ? ${i18n>skills.years} : '' }" />
                     <ObjectStatus
-                        text="{= ${skillsFlat>level} === 'expert' ? ${i18n>skills.level.expert} : (${skillsFlat>level} === 'advanced' ? ${i18n>skills.level.advanced} : ${i18n>skills.level.intermediate})}"
+                        text="{= ${skillsFlat>level} === 'expert' ? ${i18n>skills.level.expert} : (${skillsFlat>level} === 'advanced' ? ${i18n>skills.level.advanced} : (${skillsFlat>level} === 'basics' ? ${i18n>skills.level.basics} : ${i18n>skills.level.intermediate}))}"
                         state="{path: 'skillsFlat>level', formatter: 'formatter.formatLevelState'}" />
                 </cells>
             </ColumnListItem>

@@ -5,6 +5,15 @@
     core:require="{ formatter: 'net/bansemir/profile/model/formatter' }">
 
     <VBox>
+        <Panel headerText="{i18n>toolkit.concept.title}" expandable="true" expanded="true"
+            class="sapUiSmallMarginBottom">
+            <FormattedText htmlText="{i18n>toolkit.concept.text}" class="sapUiSmallMargin" />
+        </Panel>
+        <Panel headerText="{i18n>toolkit.architecture.title}" expandable="true" expanded="false"
+            class="sapUiMediumMarginBottom">
+            <FormattedText htmlText="{i18n>toolkit.architecture.text}" class="sapUiSmallMargin" />
+        </Panel>
+
         <HBox justifyContent="SpaceAround" wrap="Wrap" class="sapUiMediumMarginBottom">
             <GenericTile header="{i18n>toolkit.stats.lines}" frameType="OneByOne">
                 <TileContent>
@@ -33,25 +42,61 @@
                 <IconTabFilter text="{i18n>toolkit.fieldChange.title}" key="field-change">
                     <VBox class="sapUiSmallMargin">
                         <Image src="assets/toolkit/field-change-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
-                        <Text text="{i18n>toolkit.fieldChange.description}" />
+                        <Text text="{i18n>toolkit.fieldChange.description}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.fieldChange.function}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelBenefit}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.fieldChange.benefit}" />
                     </VBox>
                 </IconTabFilter>
                 <IconTabFilter text="{i18n>toolkit.codeReview.title}" key="code-review">
                     <VBox class="sapUiSmallMargin">
                         <Image src="assets/toolkit/review-assistant-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
-                        <Text text="{i18n>toolkit.codeReview.description}" />
+                        <Text text="{i18n>toolkit.codeReview.description}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.codeReview.function}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelBenefit}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.codeReview.benefit}" />
                     </VBox>
                 </IconTabFilter>
                 <IconTabFilter text="{i18n>toolkit.rapGenerator.title}" key="rap-generator">
                     <VBox class="sapUiSmallMargin">
                         <Image src="assets/toolkit/skeleton-generator-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
-                        <Text text="{i18n>toolkit.rapGenerator.description}" />
+                        <Text text="{i18n>toolkit.rapGenerator.description}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.rapGenerator.function}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelBenefit}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.rapGenerator.benefit}" />
                     </VBox>
                 </IconTabFilter>
                 <IconTabFilter text="{i18n>toolkit.ticketAnalysis.title}" key="ticket-analysis">
                     <VBox class="sapUiSmallMargin">
                         <Image src="assets/toolkit/ticket-accelerator-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
-                        <Text text="{i18n>toolkit.ticketAnalysis.description}" />
+                        <Text text="{i18n>toolkit.ticketAnalysis.description}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.ticketAnalysis.function}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelBenefit}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.ticketAnalysis.benefit}" />
+                    </VBox>
+                </IconTabFilter>
+                <IconTabFilter text="{i18n>toolkit.jouleEnablement.title}" key="joule-enablement">
+                    <VBox class="sapUiSmallMargin">
+                        <Image src="assets/toolkit/joule-enablement-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                        <Text text="{i18n>toolkit.jouleEnablement.description}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.jouleEnablement.function}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelBenefit}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.jouleEnablement.benefit}" />
+                    </VBox>
+                </IconTabFilter>
+                <IconTabFilter text="{i18n>toolkit.riseReadiness.title}" key="rise-readiness">
+                    <VBox class="sapUiSmallMargin">
+                        <Image src="assets/toolkit/rise-readiness-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                        <Text text="{i18n>toolkit.riseReadiness.description}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.riseReadiness.function}" class="sapUiSmallMarginBottom" />
+                        <Title text="{i18n>toolkit.labelBenefit}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
+                        <Text text="{i18n>toolkit.riseReadiness.benefit}" />
                     </VBox>
                 </IconTabFilter>
             </items>

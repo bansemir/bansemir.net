@@ -42,6 +42,9 @@
         <uxap:sections>
             <uxap:ObjectPageSection title="{i18n>positioning.heading}" id="positioningSection">
                 <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="{i18n>positioning.delivery.title}">
+                        <FormattedText htmlText="{i18n>positioning.delivery.text}" />
+                    </uxap:ObjectPageSubSection>
                     <uxap:ObjectPageSubSection title="{i18n>positioning.sapDepth.title}">
                         <FormattedText htmlText="{i18n>positioning.sapDepth.text}" />
                     </uxap:ObjectPageSubSection>
@@ -50,6 +53,22 @@
                     </uxap:ObjectPageSubSection>
                     <uxap:ObjectPageSubSection title="{i18n>positioning.aiPractice.title}">
                         <FormattedText htmlText="{i18n>positioning.aiPractice.text}" />
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>skills.heading}" id="skillsSection">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <core:Fragment fragmentName="net.bansemir.profile.view.fragment.SkillsTable" type="XML" />
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="{i18n>projects.heading}" id="projectsSection">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <core:Fragment fragmentName="net.bansemir.profile.view.fragment.ProjectCard" type="XML" />
                     </uxap:ObjectPageSubSection>
                 </uxap:subSections>
             </uxap:ObjectPageSection>
@@ -83,22 +102,6 @@
                             <FormattedText htmlText="{i18n>caseStudy.teaserText}" class="sapUiSmallMarginBottom" />
                             <Button text="{i18n>caseStudy.readMore}" type="Emphasized" press=".onNavToCaseStudy" class="sapUiSmallMarginTop" />
                         </VBox>
-                    </uxap:ObjectPageSubSection>
-                </uxap:subSections>
-            </uxap:ObjectPageSection>
-
-            <uxap:ObjectPageSection title="{i18n>skills.heading}" id="skillsSection">
-                <uxap:subSections>
-                    <uxap:ObjectPageSubSection>
-                        <core:Fragment fragmentName="net.bansemir.profile.view.fragment.SkillsTable" type="XML" />
-                    </uxap:ObjectPageSubSection>
-                </uxap:subSections>
-            </uxap:ObjectPageSection>
-
-            <uxap:ObjectPageSection title="{i18n>projects.heading}" id="projectsSection">
-                <uxap:subSections>
-                    <uxap:ObjectPageSubSection>
-                        <core:Fragment fragmentName="net.bansemir.profile.view.fragment.ProjectCard" type="XML" />
                     </uxap:ObjectPageSubSection>
                 </uxap:subSections>
             </uxap:ObjectPageSection>
@@ -158,6 +161,11 @@
                                                     <Text text="{i18n>contact.model}" />
                                                 </form:fields>
                                             </form:FormElement>
+                                            <form:FormElement label="{i18n>contact.languagesLabel}">
+                                                <form:fields>
+                                                    <Text text="{i18n>contact.languages}" />
+                                                </form:fields>
+                                            </form:FormElement>
                                             <form:FormElement label="{i18n>contact.rateLabel}">
                                                 <form:fields>
                                                     <Text text="{i18n>contact.rate}" />
@@ -173,9 +181,19 @@
                                                     <Link text="{i18n>contact.linkedin}" href="{config>/social/linkedin}" target="_blank" />
                                                 </form:fields>
                                             </form:FormElement>
-                                            <form:FormElement label="{i18n>contact.gulpLabel}">
+                                            <form:FormElement label="{i18n>contact.xingLabel}">
                                                 <form:fields>
-                                                    <Link text="{i18n>contact.gulp}" href="{config>/social/gulp}" target="_blank" />
+                                                    <Link text="{i18n>contact.xing}" href="{config>/social/xing}" target="_blank" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="{i18n>contact.freelancermapLabel}">
+                                                <form:fields>
+                                                    <Link text="{i18n>contact.freelancermap}" href="{config>/social/freelancermap}" target="_blank" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="{i18n>contact.freelanceDeLabel}">
+                                                <form:fields>
+                                                    <Link text="{i18n>contact.freelanceDe}" href="{config>/social/freelanceDe}" target="_blank" />
                                                 </form:fields>
                                             </form:FormElement>
                                         </form:formElements>

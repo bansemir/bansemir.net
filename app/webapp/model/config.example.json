@@ -38,7 +38,9 @@
   "social": {
     "linkedin": "https://linkedin.com/in/jane-doe",
     "github": "https://github.com/jane-doe/example",
-    "gulp": "https://www.gulp.de/freelancer/janedoe"
+    "xing": "https://www.xing.com/profile/Jane_Doe",
+    "freelancermap": "https://www.freelancermap.de/profil/jane-doe-profile-slug",
+    "freelanceDe": "https://www.freelance.de/freelancer/000000"
   },
   "services": {
     "calendlyUrl": "https://calendly.com/jane-doe",

@@ -47,7 +47,9 @@ var baseReplacements = {
     "{{CALENDLY_URL}}": config.services.calendlyUrl,
     "{{GITHUB_URL}}": config.social.github,
     "{{LINKEDIN_URL}}": config.social.linkedin,
-    "{{GULP_URL}}": config.social.gulp,
+    "{{XING_URL}}": config.social.xing,
+    "{{FREELANCERMAP_URL}}": config.social.freelancermap,
+    "{{FREELANCE_DE_URL}}": config.social.freelanceDe,
     "{{DOMAIN}}": config.site.domain
 };
 

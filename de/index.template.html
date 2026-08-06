@@ -93,7 +93,7 @@ header{padding:1rem 0;border-bottom:1px solid var(--border)}
 .stat-label{font-size:0.875rem;color:var(--text-muted);margin-top:0.25rem}
 .profile{padding:4rem 0}
 .profile h2{font-size:1.5rem;font-weight:700;color:var(--primary);margin-bottom:2rem;text-align:center}
-.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.profile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
 .profile-card{padding:1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px}
 .profile-card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:0.75rem}
 .profile-card p{font-size:0.9375rem;color:var(--text-secondary)}
@@ -165,6 +165,7 @@ footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;font-
         <article class="profile-card"><h3>{{L.card0Title}}</h3><p>{{L.card0Text}}</p></article>
         <article class="profile-card"><h3>{{L.card1Title}}</h3><p>{{L.card1Text}}</p></article>
         <article class="profile-card"><h3>{{L.card2Title}}</h3><p>{{L.card2Text}}</p></article>
+        <article class="profile-card"><h3>{{L.card3Title}}</h3><p>{{L.card3Text}}</p></article>
       </div>
     </div>
   </section>
@@ -175,7 +176,9 @@ footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;font-
       <div class="contact-links">
         <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
         <a href="{{LINKEDIN_URL}}" target="_blank" rel="noopener">LinkedIn <span class="sr-only">{{L.externalLinkHint}}</span></a>
-        <a href="{{GULP_URL}}" target="_blank" rel="noopener">GULP <span class="sr-only">{{L.externalLinkHint}}</span></a>
+        <a href="{{XING_URL}}" target="_blank" rel="noopener">XING <span class="sr-only">{{L.externalLinkHint}}</span></a>
+        <a href="{{FREELANCERMAP_URL}}" target="_blank" rel="noopener">freelancermap <span class="sr-only">{{L.externalLinkHint}}</span></a>
+        <a href="{{FREELANCE_DE_URL}}" target="_blank" rel="noopener">freelance.de <span class="sr-only">{{L.externalLinkHint}}</span></a>
         <a href="{{GITHUB_URL}}" target="_blank" rel="noopener">GitHub <span class="sr-only">{{L.externalLinkHint}}</span></a>
         <a href="/case-study/">Case Study</a>
       </div>
