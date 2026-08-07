@@ -97,7 +97,10 @@ header{padding:1rem 0;border-bottom:1px solid var(--border)}
 .profile-card{padding:1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px}
 .profile-card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:0.75rem}
 .profile-card p{font-size:0.9375rem;color:var(--text-secondary)}
-.toolkit{padding:4rem 0;border-top:1px solid var(--border);background:var(--bg-card)}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.stat-label a{text-decoration:underline}
+.toolkit{scroll-margin-top:1rem;padding:4rem 0;border-top:1px solid var(--border);background:var(--bg-card)}
 .toolkit h2{font-size:1.5rem;font-weight:700;color:var(--primary);margin-bottom:0.5rem;text-align:center}
 .toolkit-subline{text-align:center;color:var(--text-muted);margin-bottom:2rem}
 .toolkit-stats{list-style:none;display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-bottom:3rem}
@@ -139,6 +142,7 @@ footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;font-
   .hero-subline{font-size:1rem}
   .portrait{width:8rem;height:8rem}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+  .stat-label{min-height:3.2em}
   .profile-grid{grid-template-columns:1fr}
   .cta-group{flex-direction:column;align-items:center}
   .toolkit-essay{grid-template-columns:1fr;gap:1.5rem}
@@ -199,7 +203,7 @@ footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;font-
     </div>
   </section>
 
-  <section class="toolkit" aria-labelledby="toolkit-heading"
+  <section class="toolkit" id="toolkit" aria-labelledby="toolkit-heading"
            data-play-label="{{L.toolkitPlayLabel}}" data-pause-label="{{L.toolkitPauseLabel}}">
     <div class="container">
       <h2 id="toolkit-heading">{{T.heading}}</h2>
