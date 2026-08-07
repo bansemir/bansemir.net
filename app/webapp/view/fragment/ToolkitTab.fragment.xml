@@ -37,11 +37,12 @@
             </GenericTile>
         </HBox>
 
-        <IconTabBar id="toolkitTabBar" expandable="false" class="sapUiNoContentPadding">
+        <IconTabBar id="toolkitTabBar" expandable="false" class="sapUiNoContentPadding"
+            select=".onToolkitTabSelect">
             <items>
                 <IconTabFilter text="{i18n>toolkit.fieldChange.title}" key="field-change">
                     <VBox class="sapUiSmallMargin">
-                        <Image src="assets/toolkit/field-change-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                        <core:HTML content="&lt;video class='toolkitDemo' data-clip='field-change' controls muted loop playsinline preload='none'&gt;&lt;/video&gt;" />
                         <Text text="{i18n>toolkit.fieldChange.description}" class="sapUiSmallMarginBottom" />
                         <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
                         <Text text="{i18n>toolkit.fieldChange.function}" class="sapUiSmallMarginBottom" />
@@ -51,7 +52,7 @@
                 </IconTabFilter>
                 <IconTabFilter text="{i18n>toolkit.codeReview.title}" key="code-review">
                     <VBox class="sapUiSmallMargin">
-                        <Image src="assets/toolkit/review-assistant-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                        <core:HTML content="&lt;video class='toolkitDemo' data-clip='code-review' controls muted loop playsinline preload='none'&gt;&lt;/video&gt;" />
                         <Text text="{i18n>toolkit.codeReview.description}" class="sapUiSmallMarginBottom" />
                         <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
                         <Text text="{i18n>toolkit.codeReview.function}" class="sapUiSmallMarginBottom" />
@@ -61,7 +62,7 @@
                 </IconTabFilter>
                 <IconTabFilter text="{i18n>toolkit.rapGenerator.title}" key="rap-generator">
                     <VBox class="sapUiSmallMargin">
-                        <Image src="assets/toolkit/skeleton-generator-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                        <core:HTML content="&lt;video class='toolkitDemo' data-clip='rap-generator' controls muted loop playsinline preload='none'&gt;&lt;/video&gt;" />
                         <Text text="{i18n>toolkit.rapGenerator.description}" class="sapUiSmallMarginBottom" />
                         <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
                         <Text text="{i18n>toolkit.rapGenerator.function}" class="sapUiSmallMarginBottom" />
@@ -71,7 +72,7 @@
                 </IconTabFilter>
                 <IconTabFilter text="{i18n>toolkit.ticketAnalysis.title}" key="ticket-analysis">
                     <VBox class="sapUiSmallMargin">
-                        <Image src="assets/toolkit/ticket-accelerator-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                        <core:HTML content="&lt;video class='toolkitDemo' data-clip='ticket-analysis' controls muted loop playsinline preload='none'&gt;&lt;/video&gt;" />
                         <Text text="{i18n>toolkit.ticketAnalysis.description}" class="sapUiSmallMarginBottom" />
                         <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
                         <Text text="{i18n>toolkit.ticketAnalysis.function}" class="sapUiSmallMarginBottom" />
@@ -81,7 +82,7 @@
                 </IconTabFilter>
                 <IconTabFilter text="{i18n>toolkit.jouleEnablement.title}" key="joule-enablement">
                     <VBox class="sapUiSmallMargin">
-                        <Image src="assets/toolkit/joule-enablement-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                        <core:HTML content="&lt;video class='toolkitDemo' data-clip='joule-enablement' controls muted loop playsinline preload='none'&gt;&lt;/video&gt;" />
                         <Text text="{i18n>toolkit.jouleEnablement.description}" class="sapUiSmallMarginBottom" />
                         <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
                         <Text text="{i18n>toolkit.jouleEnablement.function}" class="sapUiSmallMarginBottom" />
@@ -91,7 +92,7 @@
                 </IconTabFilter>
                 <IconTabFilter text="{i18n>toolkit.riseReadiness.title}" key="rise-readiness">
                     <VBox class="sapUiSmallMargin">
-                        <Image src="assets/toolkit/rise-readiness-dark-de.webp" width="100%" class="sapUiSmallMarginBottom caseStudyImage" />
+                        <core:HTML content="&lt;video class='toolkitDemo' data-clip='rise-readiness' controls muted loop playsinline preload='none'&gt;&lt;/video&gt;" />
                         <Text text="{i18n>toolkit.riseReadiness.description}" class="sapUiSmallMarginBottom" />
                         <Title text="{i18n>toolkit.labelFunction}" level="H4" titleStyle="H5" class="sapUiTinyMarginTop" />
                         <Text text="{i18n>toolkit.riseReadiness.function}" class="sapUiSmallMarginBottom" />

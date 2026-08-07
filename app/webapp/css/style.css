@@ -17,3 +17,15 @@
     border: 1px solid #e7e5e4;
     border-radius: 8px;
 }
+/* Toolkit-Demos. Quelle und Poster setzt der Overview-Controller, abhaengig von
+   Sprache und aktivem Theme. Die Rahmenfarbe kommt aus dem Theme, damit die
+   Umrandung im Dark Mode nicht hell aufblitzt. */
+.toolkitDemo {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    border: 1px solid var(--sapGroup_ContentBorderColor, #e7e5e4);
+    border-radius: 8px;
+    background: #1a1d23;
+}
