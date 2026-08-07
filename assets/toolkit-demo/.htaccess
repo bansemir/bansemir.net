@@ -1,0 +1,16 @@
+# Demo-Clips: immer revalidieren.
+#
+# Die uebrigen Bilder der Seite stehen im Wurzel-.htaccess auf einem Tag Cache.
+# Fuer diese Dateien traegt das nicht: sie werden ueberarbeitet, ohne dass sich
+# der Dateiname aendert (gleiche App, gleiche Sprache, gleiches Theme). Mit
+# max-age fragt ein Browser, der eine Fassung schon geladen hat, bis zu 24
+# Stunden lang nicht mehr nach — eine korrigierte Aufnahme erreicht ihn nicht.
+#
+# no-cache verbietet nicht das Speichern, sondern nur das ungeprueft Ausliefern.
+# Unveraenderte Clips kosten damit ein 304 statt eines erneuten Downloads;
+# geaenderte kommen sofort an. Dieselbe Abwaegung wie bei den HTML-Seiten.
+<IfModule mod_headers.c>
+    <FilesMatch "\.(mp4|webp)$">
+        Header always set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>
