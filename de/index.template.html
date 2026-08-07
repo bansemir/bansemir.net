@@ -102,6 +102,10 @@ header{padding:1rem 0;border-bottom:1px solid var(--border)}
 .toolkit-subline{text-align:center;color:var(--text-muted);margin-bottom:2rem}
 .toolkit-stats{list-style:none;display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-bottom:3rem}
 .toolkit-stats li{padding:0.375rem 0.875rem;border:1px solid var(--border);border-radius:999px;background:var(--bg);font-size:0.875rem;font-weight:600;color:var(--text-secondary)}
+.toolkit-motivation{max-width:46rem;margin:0 auto 3.5rem}
+.toolkit-motivation h3{font-size:1.125rem;font-weight:700;color:var(--primary);margin-bottom:0.875rem}
+.toolkit-motivation p{color:var(--text-secondary);margin-bottom:0.875rem}
+.toolkit-motivation p:last-child{margin-bottom:0}
 .toolkit-essay{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-bottom:3.5rem}
 .toolkit-essay h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:0.75rem}
 .toolkit-essay p{font-size:0.9375rem;color:var(--text-secondary);margin-bottom:0.75rem}
@@ -207,6 +211,11 @@ footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;font-
         <li>{{T.stat2}}</li>
         <li>{{T.stat3}}</li>
       </ul>
+
+      <div class="toolkit-motivation">
+        <h3>{{T.motivationTitle}}</h3>
+        {{T.motivationText}}
+      </div>
 
       <div class="toolkit-essay">
         <article>

@@ -102,6 +102,7 @@ function toolkitReplacements(lang) {
 
     put("heading", "toolkit.heading");
     put("subline", "toolkit.subline");
+    put("motivationTitle", "toolkit.motivation.title");
     put("conceptTitle", "toolkit.concept.title");
     put("architectureTitle", "toolkit.architecture.title");
     put("labelFunction", "toolkit.labelFunction");
@@ -109,7 +110,8 @@ function toolkitReplacements(lang) {
     put("result", "toolkit.result");
     put("cta", "toolkit.cta");
 
-    // Diese beiden Bloecke tragen bewusst HTML und werden nicht escaped.
+    // Diese Bloecke tragen bewusst HTML und werden nicht escaped.
+    out["{{T.motivationText}}"] = i18n["toolkit.motivation.text"];
     out["{{T.conceptText}}"] = i18n["toolkit.concept.text"];
     out["{{T.architectureText}}"] = i18n["toolkit.architecture.text"];
 

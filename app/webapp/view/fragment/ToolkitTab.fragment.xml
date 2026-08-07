@@ -5,7 +5,11 @@
     core:require="{ formatter: 'net/bansemir/profile/model/formatter' }">
 
     <VBox>
-        <Panel headerText="{i18n>toolkit.concept.title}" expandable="true" expanded="true"
+        <Panel headerText="{i18n>toolkit.motivation.title}" expandable="true" expanded="true"
+            class="sapUiSmallMarginBottom">
+            <FormattedText htmlText="{i18n>toolkit.motivation.text}" class="sapUiSmallMargin" />
+        </Panel>
+        <Panel headerText="{i18n>toolkit.concept.title}" expandable="true" expanded="false"
             class="sapUiSmallMarginBottom">
             <FormattedText htmlText="{i18n>toolkit.concept.text}" class="sapUiSmallMargin" />
         </Panel>
