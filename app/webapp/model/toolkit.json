@@ -13,6 +13,52 @@
   },
   "tools": [
     {
+      "id": "ticket-analysis",
+      "port": 9004,
+      "title": {
+        "de": "Ticket-Bewertung",
+        "en": "Ticket evaluation"
+      },
+      "description": {
+        "de": "Score-basierte Klassifikation von Anforderungstickets nach Aufwand, Risiko und Umsetzbarkeit.",
+        "en": "Score-based classification of requirement tickets by effort, risk, and feasibility."
+      },
+      "stats": {
+        "requestTypes": 10,
+        "requestSubtypes": 28,
+        "solutionTemplates": 60,
+        "examples": 31,
+        "tests": 1344,
+        "lines": 20100
+      }
+    },
+    {
+      "id": "joule-enablement",
+      "port": 9005,
+      "title": {
+        "de": "SAP Joule & BTP-AI Enablement",
+        "en": "SAP Joule & BTP AI enablement"
+      },
+      "description": {
+        "de": "Erzeugt aus einem Joule-Use-Case und bestehender On-Premise-Landschaft einen vollständigen Enablement-Blueprint plus Starter-Scaffolds — inklusive Alternative über SAP AI Core / Generative AI Hub bzw. ABAP AI SDK. Regelbasiert und deterministisch, kein Runtime-LLM.",
+        "en": "Turns a Joule use case and an existing on-premise landscape into a complete enablement blueprint plus starter scaffolds — including the alternative track via SAP AI Core / Generative AI Hub or the ABAP AI SDK. Rule-based and deterministic, no runtime LLM."
+      },
+      "stats": {}
+    },
+    {
+      "id": "rise-readiness",
+      "port": 9006,
+      "title": {
+        "de": "SAP Joule for RISE — Embedded Readiness",
+        "en": "SAP Joule for RISE — embedded readiness"
+      },
+      "description": {
+        "de": "Prüft eine S/4HANA-Cloud-Private-Edition-Landschaft (RISE) darauf, ob embedded Joule aktiviert werden kann: Readiness-Gap-Analyse, Aktivierungs-Runbook und ausfüllbare Aktivierungsartefakte. Regelbasiert und deterministisch, kein Runtime-LLM.",
+        "en": "Checks an S/4HANA Cloud Private Edition (RISE) landscape for embedded Joule readiness: gap analysis, activation runbook and fillable activation artifacts. Rule-based and deterministic, no runtime LLM."
+      },
+      "stats": {}
+    },
+    {
       "id": "field-change",
       "port": 9001,
       "title": {
@@ -67,52 +113,6 @@
         "tests": 1660,
         "lines": 20300
       }
-    },
-    {
-      "id": "ticket-analysis",
-      "port": 9004,
-      "title": {
-        "de": "Ticket-Bewertung",
-        "en": "Ticket evaluation"
-      },
-      "description": {
-        "de": "Score-basierte Klassifikation von Anforderungstickets nach Aufwand, Risiko und Umsetzbarkeit.",
-        "en": "Score-based classification of requirement tickets by effort, risk, and feasibility."
-      },
-      "stats": {
-        "requestTypes": 10,
-        "requestSubtypes": 28,
-        "solutionTemplates": 60,
-        "examples": 31,
-        "tests": 1344,
-        "lines": 20100
-      }
-    },
-    {
-      "id": "joule-enablement",
-      "port": 9005,
-      "title": {
-        "de": "SAP Joule & BTP-AI Enablement",
-        "en": "SAP Joule & BTP AI enablement"
-      },
-      "description": {
-        "de": "Erzeugt aus einem Joule-Use-Case und bestehender On-Premise-Landschaft einen vollständigen Enablement-Blueprint plus Starter-Scaffolds — inklusive Alternative über SAP AI Core / Generative AI Hub bzw. ABAP AI SDK. Regelbasiert und deterministisch, kein Runtime-LLM.",
-        "en": "Turns a Joule use case and an existing on-premise landscape into a complete enablement blueprint plus starter scaffolds — including the alternative track via SAP AI Core / Generative AI Hub or the ABAP AI SDK. Rule-based and deterministic, no runtime LLM."
-      },
-      "stats": {}
-    },
-    {
-      "id": "rise-readiness",
-      "port": 9006,
-      "title": {
-        "de": "SAP Joule for RISE — Embedded Readiness",
-        "en": "SAP Joule for RISE — embedded readiness"
-      },
-      "description": {
-        "de": "Prüft eine S/4HANA-Cloud-Private-Edition-Landschaft (RISE) darauf, ob embedded Joule aktiviert werden kann: Readiness-Gap-Analyse, Aktivierungs-Runbook und ausfüllbare Aktivierungsartefakte. Regelbasiert und deterministisch, kein Runtime-LLM.",
-        "en": "Checks an S/4HANA Cloud Private Edition (RISE) landscape for embedded Joule readiness: gap analysis, activation runbook and fillable activation artifacts. Rule-based and deterministic, no runtime LLM."
-      },
-      "stats": {}
     }
   ]
 }
