@@ -97,6 +97,28 @@ header{padding:1rem 0;border-bottom:1px solid var(--border)}
 .profile-card{padding:1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px}
 .profile-card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:0.75rem}
 .profile-card p{font-size:0.9375rem;color:var(--text-secondary)}
+.toolkit{padding:4rem 0;border-top:1px solid var(--border);background:var(--bg-card)}
+.toolkit h2{font-size:1.5rem;font-weight:700;color:var(--primary);margin-bottom:0.5rem;text-align:center}
+.toolkit-subline{text-align:center;color:var(--text-muted);margin-bottom:2rem}
+.toolkit-stats{list-style:none;display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-bottom:3rem}
+.toolkit-stats li{padding:0.375rem 0.875rem;border:1px solid var(--border);border-radius:999px;background:var(--bg);font-size:0.875rem;font-weight:600;color:var(--text-secondary)}
+.toolkit-essay{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-bottom:3.5rem}
+.toolkit-essay h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:0.75rem}
+.toolkit-essay p{font-size:0.9375rem;color:var(--text-secondary);margin-bottom:0.75rem}
+.toolkit-essay p:last-child{margin-bottom:0}
+.toolkit-apps{display:flex;flex-direction:column;gap:4rem}
+.toolkit-app h3{font-size:1.25rem;font-weight:700;color:var(--primary);margin-bottom:0.375rem}
+.toolkit-app-lead{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:1.25rem}
+.toolkit-demo{position:relative;margin:0 0 1.25rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#1a1d23}
+.demo-video{display:block;width:100%;height:auto}
+.demo-toggle{position:absolute;right:0.625rem;bottom:0.625rem;width:2.25rem;height:2.25rem;display:flex;align-items:center;justify-content:center;border:none;border-radius:50%;background:rgba(15,23,42,0.78);color:#fff;font-size:0.875rem;line-height:1;cursor:pointer;opacity:0.85;transition:opacity 0.2s}
+.demo-toggle:hover,.demo-toggle:focus-visible{opacity:1}
+.demo-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.toolkit-app-text{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.toolkit-app-text p{font-size:0.875rem;color:var(--text-secondary);margin:0}
+.toolkit-app-label{display:block;font-size:0.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:0.25rem}
+.toolkit-result{text-align:center;font-weight:600;color:var(--text);margin-top:3.5rem}
+.toolkit-cta{text-align:center;margin-top:1.5rem}
 .contact{padding:3rem 0;border-top:1px solid var(--border);text-align:center}
 .contact h2{font-size:1.5rem;font-weight:700;color:var(--primary);margin-bottom:1.5rem}
 .contact-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;font-size:0.9375rem}
@@ -115,6 +137,9 @@ footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;font-
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
   .profile-grid{grid-template-columns:1fr}
   .cta-group{flex-direction:column;align-items:center}
+  .toolkit-essay{grid-template-columns:1fr;gap:1.5rem}
+  .toolkit-app-text{grid-template-columns:1fr;gap:1rem}
+  .toolkit-apps{gap:3rem}
 }
 </style>
 </head>
@@ -167,6 +192,134 @@ footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;font-
         <article class="profile-card"><h3>{{L.card2Title}}</h3><p>{{L.card2Text}}</p></article>
         <article class="profile-card"><h3>{{L.card3Title}}</h3><p>{{L.card3Text}}</p></article>
       </div>
+    </div>
+  </section>
+
+  <section class="toolkit" aria-labelledby="toolkit-heading"
+           data-play-label="{{L.toolkitPlayLabel}}" data-pause-label="{{L.toolkitPauseLabel}}">
+    <div class="container">
+      <h2 id="toolkit-heading">{{T.heading}}</h2>
+      <p class="toolkit-subline">{{T.subline}}</p>
+
+      <ul class="toolkit-stats">
+        <li>{{T.stat0}}</li>
+        <li>{{T.stat1}}</li>
+        <li>{{T.stat2}}</li>
+        <li>{{T.stat3}}</li>
+      </ul>
+
+      <div class="toolkit-essay">
+        <article>
+          <h3>{{T.conceptTitle}}</h3>
+          {{T.conceptText}}
+        </article>
+        <article>
+          <h3>{{T.architectureTitle}}</h3>
+          {{T.architectureText}}
+        </article>
+      </div>
+
+      <div class="toolkit-apps">
+        <article class="toolkit-app">
+          <h3>{{T.app0Title}}</h3>
+          <p class="toolkit-app-lead">{{T.app0Description}}</p>
+          <figure class="toolkit-demo">
+            <video id="demo0" class="demo-video" width="1280" height="800" muted loop playsinline preload="none"
+                   data-clip="{{T.app0Video}}"
+                   src="../assets/toolkit-demo/{{T.app0Video}}-light.mp4"
+                   poster="../assets/toolkit-demo/{{T.app0Video}}-light.webp"
+                   aria-label="{{L.toolkitDemoLabel}}: {{T.app0Title}}"></video>
+            <button type="button" class="demo-toggle" data-demo="demo0" aria-controls="demo0"></button>
+          </figure>
+          <div class="toolkit-app-text">
+            <p><span class="toolkit-app-label">{{T.labelFunction}}</span> {{T.app0Function}}</p>
+            <p><span class="toolkit-app-label">{{T.labelBenefit}}</span> {{T.app0Benefit}}</p>
+          </div>
+        </article>
+        <article class="toolkit-app">
+          <h3>{{T.app1Title}}</h3>
+          <p class="toolkit-app-lead">{{T.app1Description}}</p>
+          <figure class="toolkit-demo">
+            <video id="demo1" class="demo-video" width="1280" height="800" muted loop playsinline preload="none"
+                   data-clip="{{T.app1Video}}"
+                   src="../assets/toolkit-demo/{{T.app1Video}}-light.mp4"
+                   poster="../assets/toolkit-demo/{{T.app1Video}}-light.webp"
+                   aria-label="{{L.toolkitDemoLabel}}: {{T.app1Title}}"></video>
+            <button type="button" class="demo-toggle" data-demo="demo1" aria-controls="demo1"></button>
+          </figure>
+          <div class="toolkit-app-text">
+            <p><span class="toolkit-app-label">{{T.labelFunction}}</span> {{T.app1Function}}</p>
+            <p><span class="toolkit-app-label">{{T.labelBenefit}}</span> {{T.app1Benefit}}</p>
+          </div>
+        </article>
+        <article class="toolkit-app">
+          <h3>{{T.app2Title}}</h3>
+          <p class="toolkit-app-lead">{{T.app2Description}}</p>
+          <figure class="toolkit-demo">
+            <video id="demo2" class="demo-video" width="1280" height="800" muted loop playsinline preload="none"
+                   data-clip="{{T.app2Video}}"
+                   src="../assets/toolkit-demo/{{T.app2Video}}-light.mp4"
+                   poster="../assets/toolkit-demo/{{T.app2Video}}-light.webp"
+                   aria-label="{{L.toolkitDemoLabel}}: {{T.app2Title}}"></video>
+            <button type="button" class="demo-toggle" data-demo="demo2" aria-controls="demo2"></button>
+          </figure>
+          <div class="toolkit-app-text">
+            <p><span class="toolkit-app-label">{{T.labelFunction}}</span> {{T.app2Function}}</p>
+            <p><span class="toolkit-app-label">{{T.labelBenefit}}</span> {{T.app2Benefit}}</p>
+          </div>
+        </article>
+        <article class="toolkit-app">
+          <h3>{{T.app3Title}}</h3>
+          <p class="toolkit-app-lead">{{T.app3Description}}</p>
+          <figure class="toolkit-demo">
+            <video id="demo3" class="demo-video" width="1280" height="800" muted loop playsinline preload="none"
+                   data-clip="{{T.app3Video}}"
+                   src="../assets/toolkit-demo/{{T.app3Video}}-light.mp4"
+                   poster="../assets/toolkit-demo/{{T.app3Video}}-light.webp"
+                   aria-label="{{L.toolkitDemoLabel}}: {{T.app3Title}}"></video>
+            <button type="button" class="demo-toggle" data-demo="demo3" aria-controls="demo3"></button>
+          </figure>
+          <div class="toolkit-app-text">
+            <p><span class="toolkit-app-label">{{T.labelFunction}}</span> {{T.app3Function}}</p>
+            <p><span class="toolkit-app-label">{{T.labelBenefit}}</span> {{T.app3Benefit}}</p>
+          </div>
+        </article>
+        <article class="toolkit-app">
+          <h3>{{T.app4Title}}</h3>
+          <p class="toolkit-app-lead">{{T.app4Description}}</p>
+          <figure class="toolkit-demo">
+            <video id="demo4" class="demo-video" width="1280" height="800" muted loop playsinline preload="none"
+                   data-clip="{{T.app4Video}}"
+                   src="../assets/toolkit-demo/{{T.app4Video}}-light.mp4"
+                   poster="../assets/toolkit-demo/{{T.app4Video}}-light.webp"
+                   aria-label="{{L.toolkitDemoLabel}}: {{T.app4Title}}"></video>
+            <button type="button" class="demo-toggle" data-demo="demo4" aria-controls="demo4"></button>
+          </figure>
+          <div class="toolkit-app-text">
+            <p><span class="toolkit-app-label">{{T.labelFunction}}</span> {{T.app4Function}}</p>
+            <p><span class="toolkit-app-label">{{T.labelBenefit}}</span> {{T.app4Benefit}}</p>
+          </div>
+        </article>
+        <article class="toolkit-app">
+          <h3>{{T.app5Title}}</h3>
+          <p class="toolkit-app-lead">{{T.app5Description}}</p>
+          <figure class="toolkit-demo">
+            <video id="demo5" class="demo-video" width="1280" height="800" muted loop playsinline preload="none"
+                   data-clip="{{T.app5Video}}"
+                   src="../assets/toolkit-demo/{{T.app5Video}}-light.mp4"
+                   poster="../assets/toolkit-demo/{{T.app5Video}}-light.webp"
+                   aria-label="{{L.toolkitDemoLabel}}: {{T.app5Title}}"></video>
+            <button type="button" class="demo-toggle" data-demo="demo5" aria-controls="demo5"></button>
+          </figure>
+          <div class="toolkit-app-text">
+            <p><span class="toolkit-app-label">{{T.labelFunction}}</span> {{T.app5Function}}</p>
+            <p><span class="toolkit-app-label">{{T.labelBenefit}}</span> {{T.app5Benefit}}</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="toolkit-result">{{T.result}}</p>
+      <p class="toolkit-cta"><a class="cta-primary" href="{{CALENDLY_URL}}" target="_blank" rel="noopener">{{T.cta}} <span class="sr-only">{{L.externalLinkHint}}</span></a></p>
     </div>
   </section>
 

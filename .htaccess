@@ -30,8 +30,8 @@ RewriteRule ^$ /de/ [R=301,L]
     <FilesMatch "\.html$">
         Header always set Cache-Control "no-cache"
     </FilesMatch>
-    # Images and fonts change rarely — cache for a day.
-    <FilesMatch "\.(png|jpg|jpeg|webp|svg|ico|woff2?)$">
+    # Images, fonts and the toolkit demo clips change rarely — cache for a day.
+    <FilesMatch "\.(png|jpg|jpeg|webp|svg|ico|woff2?|mp4)$">
         Header always set Cache-Control "public, max-age=86400"
     </FilesMatch>
     # Code and data: short cache so deployments propagate within minutes.
@@ -41,6 +41,9 @@ RewriteRule ^$ /de/ [R=301,L]
 </IfModule>
 
 # --- MIME types ------------------------------------------------------------------
+# nosniff is set above, so a wrong or missing Content-Type stops the demo clips
+# from playing rather than being silently corrected by the browser.
 <IfModule mod_mime.c>
     AddType text/plain .properties
+    AddType video/mp4 .mp4
 </IfModule>

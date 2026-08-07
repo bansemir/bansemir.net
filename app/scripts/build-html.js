@@ -38,6 +38,97 @@ if (missing.length > 0) {
 
 var config = JSON.parse(fs.readFileSync(path.join(root, "app", "webapp", "model", "config.json"), "utf8"));
 
+// --- Toolkit-Texte -------------------------------------------------------
+// Der Toolkit-Abschnitt der Landing Page zeigt dieselben Texte wie das SAPUI5-
+// Profil. Statt sie nach content/landing-*.json zu kopieren, werden sie hier aus
+// den i18n-Properties gelesen — eine Quelle, keine Abweichung ueber die Zeit.
+
+// .properties sind ISO-8859-1 mit \uXXXX-Escapes fuer alles jenseits von ASCII.
+function readProperties(relPath) {
+    var raw = fs.readFileSync(path.join(root, relPath), "latin1");
+    var entries = {};
+    raw.split(/\r?\n/).forEach(function (line) {
+        if (!line || line.charAt(0) === "#") return;
+        var sep = line.indexOf("=");
+        if (sep < 0) return;
+        var value = line.slice(sep + 1).replace(/\\u([0-9a-fA-F]{4})/g, function (_, hex) {
+            return String.fromCharCode(parseInt(hex, 16));
+        });
+        entries[line.slice(0, sep).trim()] = value;
+    });
+    return entries;
+}
+
+// Fuer Felder, die als Text und nicht als Markup gemeint sind. Die
+// concept/architecture-Texte tragen bewusst HTML und bleiben unangetastet.
+function escapeText(value) {
+    return String(value)
+        .split("&").join("&amp;")
+        .split("<").join("&lt;")
+        .split(">").join("&gt;");
+}
+
+function toCamelCase(id) {
+    return id.replace(/-([a-z])/g, function (_, letter) {
+        return letter.toUpperCase();
+    });
+}
+
+var toolkitModel = JSON.parse(
+    fs.readFileSync(path.join(root, "app", "webapp", "model", "toolkit.json"), "utf8")
+);
+
+// Die Landing Page hat sechs fest ausgeschriebene App-Bloecke. Kommt im Modell
+// eine siebte Anwendung dazu, fiele sie sonst stillschweigend unter den Tisch.
+var TOOLKIT_APP_BLOCKS = 6;
+
+function toolkitReplacements(lang) {
+    if (toolkitModel.tools.length !== TOOLKIT_APP_BLOCKS) {
+        throw new Error("toolkit.json fuehrt " + toolkitModel.tools.length
+            + " Anwendungen, die Landing-Templates haben " + TOOLKIT_APP_BLOCKS
+            + " Bloecke — Templates anpassen.");
+    }
+    var i18n = readProperties(path.join("app", "webapp", "i18n",
+        lang === "de" ? "i18n_de.properties" : "i18n_en.properties"));
+    var out = {};
+
+    function put(placeholder, propertyKey) {
+        var value = i18n[propertyKey];
+        if (value === undefined) {
+            throw new Error("i18n-Schluessel fehlt (" + lang + "): " + propertyKey);
+        }
+        out["{{T." + placeholder + "}}"] = escapeText(value);
+    }
+
+    put("heading", "toolkit.heading");
+    put("subline", "toolkit.subline");
+    put("conceptTitle", "toolkit.concept.title");
+    put("architectureTitle", "toolkit.architecture.title");
+    put("labelFunction", "toolkit.labelFunction");
+    put("labelBenefit", "toolkit.labelBenefit");
+    put("result", "toolkit.result");
+    put("cta", "toolkit.cta");
+
+    // Diese beiden Bloecke tragen bewusst HTML und werden nicht escaped.
+    out["{{T.conceptText}}"] = i18n["toolkit.concept.text"];
+    out["{{T.architectureText}}"] = i18n["toolkit.architecture.text"];
+
+    ["lines", "rules", "tests", "domains"].forEach(function (name, i) {
+        put("stat" + i, "toolkit.stats." + name);
+    });
+
+    toolkitModel.tools.forEach(function (tool, i) {
+        var key = toCamelCase(tool.id);
+        put("app" + i + "Title", "toolkit." + key + ".title");
+        put("app" + i + "Description", "toolkit." + key + ".description");
+        put("app" + i + "Function", "toolkit." + key + ".function");
+        put("app" + i + "Benefit", "toolkit." + key + ".benefit");
+        out["{{T.app" + i + "Video}}"] = tool.id + "-" + lang;
+    });
+
+    return out;
+}
+
 var baseReplacements = {
     "{{EMAIL}}": config.owner.email,
     "{{PHONE}}": config.owner.phone,
@@ -75,8 +166,8 @@ function flattenContent(obj) {
 }
 
 var templates = [
-    { tpl: "de/index.template.html", content: "content/landing-de.json", lang: "de" },
-    { tpl: "en/index.template.html", content: "content/landing-en.json", lang: "en" },
+    { tpl: "de/index.template.html", content: "content/landing-de.json", lang: "de", toolkit: true },
+    { tpl: "en/index.template.html", content: "content/landing-en.json", lang: "en", toolkit: true },
     { tpl: "case-study/index.template.html", content: "content/casestudy-de.json", lang: "de" },
     { tpl: "case-study/en/index.template.html", content: "content/casestudy-en.json", lang: "en" },
     { tpl: "legal/impressum.template.html", content: null, lang: "de" },
@@ -96,6 +187,14 @@ templates.forEach(function (entry) {
     Object.keys(baseReplacements).forEach(function (key) {
         content = content.split(key).join(baseReplacements[key]);
     });
+
+    // Toolkit texts (shared with the SAPUI5 profile via i18n properties)
+    if (entry.toolkit) {
+        var toolkitTexts = toolkitReplacements(entry.lang);
+        Object.keys(toolkitTexts).forEach(function (key) {
+            content = content.split(key).join(toolkitTexts[key]);
+        });
+    }
 
     // Content replacements (landing page texts)
     if (entry.content) {

@@ -9,10 +9,22 @@
   "ctaSecondary": "Interactive SAPUI5 profile &#8594;",
   "statsLabel": "Key figures",
   "stats": [
-    { "value": "10+", "label": "Years experience" },
-    { "value": "4", "label": "Industries" },
-    { "value": "50k", "label": "Lines of code" },
-    { "value": "100+", "label": "Rules" }
+    {
+      "value": "10+",
+      "label": "Years experience"
+    },
+    {
+      "value": "4",
+      "label": "Industries"
+    },
+    {
+      "value": "50k",
+      "label": "Lines of code"
+    },
+    {
+      "value": "100+",
+      "label": "Rules"
+    }
   ],
   "profileHeading": "Profile",
   "profileLabel": "Profile summary",
@@ -30,6 +42,9 @@
       "text": "Placeholder text for the third profile card."
     }
   ],
+  "toolkitDemoLabel": "Demo",
+  "toolkitPlayLabel": "Play demo",
+  "toolkitPauseLabel": "Pause demo",
   "contactHeading": "Contact",
   "contactLabel": "Contact",
   "externalLinkHint": "(opens new window)",

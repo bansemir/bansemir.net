@@ -9,10 +9,22 @@
   "ctaSecondary": "Interaktives SAPUI5-Profil &#8594;",
   "statsLabel": "Kernzahlen",
   "stats": [
-    { "value": "10+", "label": "Jahre Erfahrung" },
-    { "value": "4", "label": "Branchen" },
-    { "value": "50k", "label": "Zeilen Code" },
-    { "value": "100+", "label": "Regeln" }
+    {
+      "value": "10+",
+      "label": "Jahre Erfahrung"
+    },
+    {
+      "value": "4",
+      "label": "Branchen"
+    },
+    {
+      "value": "50k",
+      "label": "Zeilen Code"
+    },
+    {
+      "value": "100+",
+      "label": "Regeln"
+    }
   ],
   "profileHeading": "Kurzprofil",
   "profileLabel": "Kurzprofil",
@@ -30,6 +42,9 @@
       "text": "Platzhalter-Text für die dritte Profil-Karte."
     }
   ],
+  "toolkitDemoLabel": "Demo",
+  "toolkitPlayLabel": "Demo abspielen",
+  "toolkitPauseLabel": "Demo pausieren",
   "contactHeading": "Kontakt",
   "contactLabel": "Kontakt",
   "externalLinkHint": "(öffnet neues Fenster)",
